@@ -7,11 +7,12 @@ const vm = require('vm');
 const ctx = { window: {} };
 ctx.window.window = ctx.window;
 vm.createContext(ctx);
-for (const f of ['render.js', 'folds.js', 'folds-extra.js', 'events.js']) {
+for (const f of ['render.js', 'kit.js', 'foldsim.js', 'library-1.js', 'library-2.js', 'events.js']) {
   vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'public', 'js', f), 'utf8'), ctx);
 }
 const { EVENTS, easter, orthodoxEaster, thanksgiving, mostRelevant, occurrence } = ctx.window.NapkinEvents;
 const FOLDS = ctx.window.NapkinFolds;
+const { expand } = ctx.window.NapkinSim;
 const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
 
@@ -33,7 +34,7 @@ const cases = {
   '2026-12-06': 'hanukkah',
   '2026-12-20': 'christmas',
   '2027-01-02': 'lunarnewyear',
-  '2027-02-20': 'ramadan',
+  '2027-02-20': 'lunarnewyear',
   '2027-04-15': 'passover',
   '2027-08-01': 'midautumn',
 };
@@ -46,12 +47,16 @@ const ids = new Set(FOLDS.map((f) => f.id));
 for (const ev of EVENTS) {
   assert.ok(occurrence(ev, day('2026-10-26')), `${ev.id} has an upcoming date`);
   assert.ok(occurrence(ev, day('2028-06-01')), `${ev.id} has a 2028/29 date`);
+  assert.ok(ev.folds.length >= 1, `${ev.id} has at least one fold`);
   ev.folds.forEach((f) => assert.ok(ids.has(f), `${ev.id} -> ${f}`));
+  ev.folds.forEach((f) => assert.ok(ev.why && ev.why[f], `${ev.id} says why ${f} fits`));
 }
 for (const f of FOLDS) {
   assert.ok(f.steps.length >= 2 && f.final, `${f.id} has steps + final`);
   assert.ok(f.sources && f.sources.length >= 1, `${f.id} cites a published source`);
-  f.steps.forEach((s, i) => assert.ok(s.title && s.text && s.shapes.length, `${f.id} step ${i + 1}`));
+  const x = expand(f);
+  x.steps.forEach((s, i) => assert.ok(s.title && s.text && s.shapes && s.shapes.length, `${f.id} step ${i + 1} has a picture`));
+  assert.ok(x.final.shapes && x.final.shapes.length, `${f.id} final picture`);
 }
 // Folds must need nothing but napkins (two napkins together is fine)
 const extras = /\b(ribbon|napkin ring|glass|goblet|twine|string|clip|tape|place card|cotton ball|egg)\b/i;

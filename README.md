@@ -4,9 +4,10 @@ A friendly napkin-folding web app for celebrations from many faiths, cultures an
 
 - **Picks the right celebration on its own.** When the page opens it shows the celebration that's on now or coming up next (Halloween, Diwali, Hanukkah, Ramadan, Lunar New Year, Passover, Vesak and more: 24 in all).
 - **Changes its look for each celebration.** Colours, floating emoji and the napkin colours in every picture all switch to match the celebration you pick.
-- **Step-by-step guides.** 35 folds, from the Standing Fan and Bishop's Mitre to a Halloween Bat and an Easter Basket. Each has an illustrated step-by-step guide and a picture of the finished napkin, plus keyboard and swipe controls, an "all steps" view and a print-friendly layout.
-- **Published, sourced instructions.** Every fold's steps come from published guides, which the guide page links to. Folds found in two or more independent guides are marked as cross-checked; the rest name their single source.
-- **Suggests folds.** Each celebration recommends three folds, but you can browse every fold.
+- **Step-by-step guides.** 26 folds, from a Halloween Bat and Witch's Hat to a Christmas Tree, Thanksgiving Turkey and Easter Bunny. Each has an illustrated step-by-step guide and a picture of the finished napkin, plus keyboard and swipe controls, an "all steps" view and a print-friendly layout.
+- **Published, sourced instructions.** Every fold follows a published guide step by step, with nothing summarised or left out, and the guide page links to it. Every fold needs only napkins: no ribbons, rings or other extras.
+- **Accurate pictures.** Flat steps are drawn by a fold simulator that really folds the napkin along each crease, so every picture shows the shape that fold gives. Steps that stand up or roll the napkin are drawn from the source's photos.
+- **Folds that fit.** Each celebration lists only folds that genuinely belong to it, with the reason shown on the card (the Jade Rabbit for Mid-Autumn, red envelopes for Lunar New Year). You can still browse every fold.
 
 ## Run it
 
@@ -36,8 +37,9 @@ Handy URL options:
 | File | What it does |
 | --- | --- |
 | `public/js/events.js` | Celebrations: dates (fixed, calculated like Easter and Thanksgiving, or looked up from a table for lunar calendars), blurbs, tips, recommended folds and colour themes |
-| `public/js/folds.js` | Core fold library: steps, sources and the shapes for each picture |
-| `public/js/folds-extra.js` | More folds, in the same format |
+| `public/js/kit.js` | Shared drawing helpers and the list of published sources |
+| `public/js/foldsim.js` | Fold simulator: folds a napkin along each step's crease and draws the result |
+| `public/js/library-1.js`, `library-2.js` | The fold library: every step's text, the fold it makes, and drawings for standing or rolled steps |
 | `public/js/photos.js` | Which steps have a photo in `public/images/` |
 | `public/js/render.js` | Draws each step as a photo-style SVG: a napkin on a wooden table with lighting, shadows and a linen texture |
 | `public/js/app.js` | The page itself: picking the default celebration, theming, the step guide and links |
@@ -45,14 +47,12 @@ Handy URL options:
 
 ## Adding real photographs
 
-The step pictures are drawn in the browser so that they take on each celebration's colours. To show a real photo for a step or a finished napkin instead, add `photo` to that step in `public/js/folds.js` (put the images in `public/images/`):
+The step pictures are drawn in the browser so that they take on each celebration's colours. To show a real photo for a step or a finished napkin instead, add its name to `public/js/photos.js` (`<fold>-<step>` or `<fold>-final`) (put the images in `public/images/`):
 
 ```js
-{ title: 'Fold in half', text: '…', photo: 'images/fan-1.jpg', shapes: [...] }
-// or for the finished napkin
-final: { text: '…', photo: 'images/fan-final.jpg', shapes: [...] }
+window.NapkinPhotos = ['fan-1', 'fan-final'];  // images/fan-1.jpg, images/fan-final.jpg
 ```
 
 ## A note on dates
 
-Lunar and lunisolar festivals (Eid, Ramadan, Diwali, Holi, Hanukkah, Passover, Vesak and others) use a table of dates for 2025–2029. These dates can differ by a day or so depending on the country, the community and moon sighting. Extend the tables in `public/js/events.js` to cover later years.
+Lunar and lunisolar festivals (Eid, Diwali, Hanukkah, Passover, Vesak and others) use a table of dates for 2025–2029. These dates can differ by a day or so depending on the country, the community and moon sighting. Extend the tables in `public/js/events.js` to cover later years.

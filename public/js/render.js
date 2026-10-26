@@ -224,6 +224,15 @@
       );
     }
 
+    if (step.rotate) {
+      const y = step.flip ? 13 : 3;
+      parts.push(
+        `<g><rect x="3" y="${y}" width="25" height="8.6" rx="4.3" fill="#fff" opacity=".94"/>` +
+          `<text x="15.5" y="${y + 5.9}" font-size="4.3" text-anchor="middle" font-weight="700" ` +
+          `font-family="system-ui,-apple-system,Segoe UI,sans-serif" fill="${FIXED.ink}">${step.rotate > 0 ? '↺' : '↻'} Turn</text></g>`
+      );
+    }
+
     const label = (opts.label || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
     return `<svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label}" preserveAspectRatio="xMidYMid slice">${defs}${parts.join('')}</svg>`;
   }

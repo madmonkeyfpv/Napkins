@@ -1,158 +1,158 @@
 [
  {
-  "name": "fan-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/fan-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Standing Fan\" napkin fold (A crisp pleated fan that stands up proudly on the plate.) made from a saffron orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "done"
- },
- {
-  "name": "rose-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/rose-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Rolled Rose\" napkin fold (A romantic rolled rose with two leaves made from the napkin itself.) made from a honey gold starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "done"
- },
- {
-  "name": "bunny-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/bunny-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bunny Ears\" napkin fold (A cheeky rabbit with perky ears that little guests love.) made from a soft lavender starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "done"
- },
- {
-  "name": "tree-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/tree-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Festive Tree\" napkin fold (Stacked, tucked layers make a little evergreen. Top it with a star.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "lotus-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/lotus-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Lotus Blossom\" napkin fold (A blooming water-lily (also called the Rose fold) with eight pointed petals.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "candle-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/candle-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Candle\" napkin fold (A tall rolled candle that stands to attention, a nod to festivals of light.) made from a royal blue starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "hat-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/hat-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Witch's Hat\" napkin fold (The classic Clown’s Hat cone with a turned-up cuff. In black or orange, it’s an instant witch’s hat.) made from an orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "pocket-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/pocket-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Cutlery Pocket\" napkin fold (A smart striped pocket that holds the knife, fork and spoon.) made from a burnt orange starched cotton-linen napkin, lying on the table, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "pyramid-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/pyramid-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Pyramid\" napkin fold (A crisp, self-standing pyramid: quick, elegant and ideal when you’re folding for a crowd.) made from an ivory white starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "heart-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/heart-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Sweetheart\" napkin fold (A simple folded heart that says “I made this for you”.) made from a raspberry red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "crown-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/crown-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Crown\" napkin fold (The regal banquet-hall classic: tall, self-standing, with two peaks.) made from a burnt orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "envelope-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/envelope-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Envelope\" napkin fold (A neat envelope fold with a real pocket and a pointed flap.) made from a red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "mitre-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/mitre-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bishop's Mitre\" napkin fold (The tall, two-peaked banquet classic, shaped like a bishop’s mitre and traditional for St Nicholas.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "cardinal-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/cardinal-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Cardinal's Hat\" napkin fold (A tall, single-peaked hat that stands on its own: elegant and quick once you know it.) made from a golden yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "rosebud-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/rosebud-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Rosebud\" napkin fold (A neat standing bud with two pointed petals: dainty and quick.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "paradise-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/paradise-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bird of Paradise\" napkin fold (Four pointed plumes rise from a narrow base, like the tropical flower.) made from a golden yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "fleurdelis-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/fleurdelis-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Fleur-de-Lis\" napkin fold (A standing lily with a tall centre peak and two curling side petals.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "arum-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/arum-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Arum Lily\" napkin fold (A graceful standing lily, the trumpet-shaped flower long linked with Easter.) made from a soft lavender starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "handkerchief-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/handkerchief-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Handkerchief\" napkin fold (Fanned, layered points like a pocket square: smart and very quick.) made from a golden yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "butterfly-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/butterfly-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Fanciful Butterfly\" napkin fold (Two petal-wings fold down from a standing base: a butterfly settling on the plate.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "obi-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/obi-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Obi Basket\" napkin fold (A square tray with four folded pockets.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "knot-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/knot-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"What Knot\" napkin fold (Roll it, tie it, done: a relaxed fold for picnics and casual suppers.) made from an orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "swan-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/swan-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Swan\" napkin fold (A graceful swan with a curved neck and feathered tail, made for weddings and romantic dinners.) made from a golden yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
-  "name": "wrap-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/wrap-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Cutlery Wrap\" napkin fold (Knife, fork and spoon rolled up neatly in the napkin: ideal for buffets, picnics and garden parties.) made from a sunny yellow starched cotton-linen napkin, lying on the table, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
-  "status": "todo"
- },
- {
   "name": "bat-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/bat-final.jpg",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/bat-final.jpg",
   "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bat\" napkin fold (Two swooping wings and a pointy-eared head from one napkin, folded in under a minute.) made from an orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
   "status": "todo"
  },
  {
+  "name": "witchhat-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/witchhat-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Witch's Hat\" napkin fold (A tall pointed crown with a wide brim, lying flat on the plate.) made from an orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "tree-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/tree-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Christmas Tree\" napkin fold (Staggered layers tucked into tiers make a modern little evergreen.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "turkey-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/turkey-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Thanksgiving Turkey\" napkin fold (The Christmas-tree fold turned on its side, with the tiers standing up as tail feathers.) made from a burnt orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "lotus-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/lotus-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Lotus\" napkin fold (Corners folded to the centre three times, then pulled out into a blooming flower. Linen companies call it “The Rose”.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "shamrock-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/shamrock-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Shamrock\" napkin fold (Four rounded leaves pulled out around a square centre: a four-leaf clover for luck.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "fan-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/fan-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Standing Fan\" napkin fold (Accordion pleats that fan out into a half-circle, propped up by a folded triangle.) made from a sunny yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "done"
+ },
+ {
+  "name": "rose-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/rose-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Rolled Rose\" napkin fold (A rolled rose with two leaves pulled from the napkin’s own corner.) made from a sage green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "done"
+ },
+ {
+  "name": "heart-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/heart-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Heart\" napkin fold (A skinny strip folded up like a paper football, with the corners tucked into a heart.) made from a raspberry red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "candle-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/candle-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Candle\" napkin fold (A tall rolled candle with one point turned down and the other shaped into a flame.) made from a royal blue starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "bunny-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/bunny-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bunny\" napkin fold (A standing bunny with two tall ears, folded from a long strip of napkin.) made from a soft lavender starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "done"
+ },
+ {
+  "name": "envelope-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/envelope-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Envelope\" napkin fold (A flat envelope with a real pocket and a pointed flap.) made from a red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "crown-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/crown-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Crown\" napkin fold (A standing crown with a tall centre point and two petals peeled down at the sides.) made from a honey gold starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "pyramid-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/pyramid-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Pyramid\" napkin fold (A simple standing pyramid that folds in on itself from the centre.) made from an ivory white starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "mitre-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/mitre-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bishop's Mitre\" napkin fold (The two-peaked banquet classic, shaped like a bishop’s mitre. A traditional St Nicholas fold.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "elfshoe-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/elfshoe-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Elf Shoe\" napkin fold (A pointed elf’s shoe with a turned-down cuff: a kid-friendly Christmas fold.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "elfhat-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/elfhat-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Elf Hat\" napkin fold (A tall rolled cone with its pointed ends turned up into a brim, standing on the plate.) made from a forest green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
   "name": "basket-final",
-  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/58ebf3c8a43ac09b221b58049c6736be922dbb51/design/refs/basket-final.jpg",
-  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Easter Basket\" napkin fold (A soft, round basket rolled from a single napkin.) made from a sage green starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/basket-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Basket\" napkin fold (A soft round basket made by wrapping and rolling one napkin.) made from a deep red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "arum-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/arum-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Arum Lily\" napkin fold (A standing lily with layered petals around a pointed centre.) made from a soft lavender starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "rosebud-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/rosebud-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Rosebud\" napkin fold (A neat standing bud with its loose points curling at the top.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "butterfly-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/butterfly-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Fanciful Butterfly\" napkin fold (A standing fold whose two petals turn down like a butterfly’s wings.) made from a marigold orange starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "paradise-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/paradise-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Bird of Paradise\" napkin fold (Four pointed layers peeled back into a crest, like the tropical flower.) made from a sunny yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "partyhat-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/partyhat-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Party Hat (Clown's Hat)\" napkin fold (A tall cone with its hem turned up, standing on its base like a party hat.) made from a golden yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "swan-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/swan-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Swan\" napkin fold (A swan with a folded neck and head, and loose corners pulled up as tail feathers.) made from a raspberry red starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "wrap-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/wrap-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Cutlery Roll\" napkin fold (Knife, fork and spoon rolled up neatly inside the napkin, ready for a buffet or picnic.) made from a sunny yellow starched cotton-linen napkin, lying on the table, on a warm wooden dining table. Real woven fabric texture and crisp folds. Eye-level three-quarter view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
+  "status": "todo"
+ },
+ {
+  "name": "pouch-final",
+  "ref": "https://raw.githubusercontent.com/madmonkeyfpv/Napkins/main/design/refs/pouch-final.jpg",
+  "prompt": "Photorealistic photograph that recreates this reference image exactly: same composition, framing, napkin shape and colours. The finished \"Silverware Pouch\" napkin fold (A flat pocket with a diagonal band, holding the knife, fork and spoon.) made from a sunny yellow starched cotton-linen napkin, on a white ceramic dinner plate, on a warm wooden dining table. Real woven fabric texture and crisp folds. Overhead top-down view, soft natural window light from the upper left, gentle realistic shadows, professional food-styling photography, sharp focus. No hands, no text.",
   "status": "todo"
  }
 ]
