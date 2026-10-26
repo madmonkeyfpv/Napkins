@@ -190,7 +190,6 @@
 
   const envelope = [
     P('31,24 69,24 69,54 31,54', 0),
-    P('36,18 64,18 64,30 36,30', 0, 'white'),
     P('31,54 31,40 69,40 69,54', 1),
     P('31,24 69,24 50,46', 1),
   ];
@@ -418,8 +417,8 @@
         },
       ],
       final: {
-        text: 'Place it on the plate and neaten each tier. A cinnamon stick makes a lovely trunk and a star-shaped card a topper.',
-        shapes: tree(true),
+        text: 'Place it on the plate and neaten each tier so the branches sit evenly.',
+        shapes: tree(false),
         prop: 'plate',
       },
     },
@@ -429,7 +428,7 @@
       emoji: '🪷',
       difficulty: 'Medium',
       minutes: 5,
-      blurb: 'A blooming water-lily (also called the Rose fold) that can cradle a few dates or a sweet.',
+      blurb: 'A blooming water-lily (also called the Rose fold) with eight pointed petals.',
       tip: 'Press every fold firmly. A stiff, starched napkin keeps the petals standing.',
       sources: [SRC.calinen('therose', 'The Rose'), SRC.werent, SRC.falvey],
       steps: [
@@ -493,7 +492,7 @@
         },
       ],
       final: {
-        text: 'Your lotus is in bloom! Nestle a few dates, a sweet or a place card in the centre.',
+        text: 'Your lotus is in bloom! Press the centre down gently so it sits flat on the plate.',
         shapes: lotusFlower(true),
         prop: 'plate',
       },
@@ -566,8 +565,8 @@
         },
       ],
       final: {
-        text: 'Stand the hat on its cuff. Tie a ribbon around the cuff if you like.',
-        shapes: coneHat(true),
+        text: 'Stand the hat up on its cuff on the plate.',
+        shapes: coneHat(false),
         prop: 'plateSide',
       },
     },
@@ -577,7 +576,7 @@
       emoji: '🍴',
       difficulty: 'Medium',
       minutes: 4,
-      blurb: 'A smart striped pocket that holds the cutlery, a menu or a sprig of herbs.',
+      blurb: 'A smart striped pocket that holds the knife, fork and spoon.',
       tip: 'Press each diagonal band flat (an iron helps) for crisp, even stripes.',
       sources: [SRC.toh, SRC.werent, SRC.homedepot],
       steps: [
@@ -618,7 +617,7 @@
         },
       ],
       final: {
-        text: 'All set! Tuck a name card or a sprig of herbs into the second band.',
+        text: 'All set! The bands hold the knife, fork and spoon neatly in place.',
         shapes: pocket(true),
       },
     },
@@ -656,41 +655,6 @@
         text: 'Pick it up at the centre and stand it on the long base of the triangle, like a pyramid.',
         shapes: pyramid,
         prop: 'plateSide',
-      },
-    },
-    {
-      id: 'bow',
-      name: 'Napkin-Ring Bow',
-      emoji: '🎀',
-      difficulty: 'Easy',
-      minutes: 2,
-      blurb: 'Pleat, pinch and slip through a ring for a flared bow in under two minutes.',
-      tip: 'Any napkin ring works; a ribbon tied in a bow is a lovely alternative.',
-      sources: [SRC.homedepot, SRC.falvey],
-      steps: [
-        quartersStep('Fold the napkin in half, then in half again, to make a square.'),
-        {
-          title: 'Accordion pleat',
-          text: 'Make two or three accordion folds (back and forth) across the width of the square.',
-          shapes: [P('30,20 70,20 70,60 30,60')],
-          lines: [30, 40, 50].map((y) => [30, y, 70, y]),
-          arrows: [A(76, 58, 76, 22, 0.15)],
-        },
-        {
-          title: 'Pinch & ring',
-          text: 'Pinch the pleats together in the middle and slip the napkin through a napkin ring.',
-          shapes: [P('20,36 80,36 80,46 20,46')],
-          details: [
-            [20, 39.5, 80, 39.5],
-            [20, 42.5, 80, 42.5],
-          ],
-          arrows: [A(22, 30, 46, 30, 0.3), A(78, 30, 54, 30, -0.3)],
-        },
-      ],
-      final: {
-        text: 'Gently smooth and flare out both ends so it opens into a bow.',
-        shapes: [...fan(48, 40, 30, 148, 212, 6), ...fan(52, 40, 30, -32, 32, 6), P('45,32 55,32 55,48 45,48', 0, 'accent')],
-        prop: 'plate',
       },
     },
     {
@@ -802,8 +766,8 @@
       emoji: '✉️',
       difficulty: 'Easy',
       minutes: 3,
-      blurb: 'A neat envelope with a real pocket: slip in a name card, a blessing or a little gift.',
-      tip: 'Lovely for menus, place cards, red envelopes or Eid gifts.',
+      blurb: 'A neat envelope fold with a real pocket and a pointed flap.',
+      tip: 'Press each fold firmly so the flap stays closed.',
       sources: [{ name: 'Instructables – Envelope Napkin Fold', url: 'https://www.instructables.com/Envelope-Napkin-Fold/' }, SRC.toh],
       steps: [
         triangleStep('Lay the napkin face-down and fold it in half diagonally. Turn the triangle so its long side is nearest you.'),
@@ -836,14 +800,14 @@
         },
         {
           title: 'Close the flap',
-          text: 'Slip a card or note into the pocket, then fold the top point down to close the envelope.',
+          text: 'Fold the top point down over the pocket to close the envelope.',
           shapes: [P('31,41 50,22 69,41 69,52 31,52'), P('31,41 69,41 69,52 31,52', 1)],
           lines: [[31, 41, 69, 41]],
           arrows: [A(50, 24, 50, 47, 0.4)],
         },
       ],
       final: {
-        text: 'Sealed and delivered! Tuck a name card, menu or blessing inside for each guest.',
+        text: 'Sealed and delivered! Press the flap flat and set it on the plate.',
         shapes: envelope,
         prop: 'plate',
       },
