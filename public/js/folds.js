@@ -851,4 +851,6 @@
   ];
 
   window.NapkinFolds = FOLDS;
+  // Shared drawing kit for folds-extra.js
+  window.NapkinFoldKit = { P, D, C, E, A, r, SQUARE, HALF, TRI, SRC, pleats, fan, petal, star, halfStep, triangleStep, quartersStep };
 })();

@@ -187,7 +187,7 @@
     const others = FOLDS.filter((f) => !ev.folds.includes(f.id));
     $('#folds-title').textContent = `Perfect folds for ${ev.name}`;
     $('#folds-sub').textContent = 'Hand-picked for the occasion — but every fold works for every table.';
-    $('#fold-recommended').innerHTML = rec.map((f) => foldCard(f, true)).join('');
+    $('#fold-recommended').innerHTML = rec.map((f, i) => foldCard(f, i < 3)).join('');
     $('#fold-others').innerHTML = others.map((f) => foldCard(f, false)).join('');
     $('#more-count').textContent = `(${others.length})`;
   }
@@ -206,7 +206,7 @@
     $('#toggle-view').hidden = !foldSteps(fold).some((s) => s.photo);
     $('#guide-tip').innerHTML =
       `<strong>Napkin tip:</strong> ${esc(fold.tip)}` +
-      `<span class="sources">✅ Steps checked against: ${fold.sources
+      `<span class="sources">${fold.sources.length > 1 ? '✅ Steps cross-checked against' : '📖 Steps from'}: ${fold.sources
         .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`)
         .join(' · ')}</span>`;
 
