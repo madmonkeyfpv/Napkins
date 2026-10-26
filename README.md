@@ -24,7 +24,7 @@ python3 -m http.server 8000 -d public   # then visit http://localhost:8000
 npx wrangler deploy
 ```
 
-If Workers Builds is connected to this repo, every push to the production branch deploys automatically.
+Workers Builds is connected to this repo, so every merge to `main` deploys automatically. If deploys stop, check Workers & Pages → napkins → Settings → Builds: the project must show as connected to `madmonkeyfpv/Napkins`.
 
 Handy URL options:
 
