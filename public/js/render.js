@@ -183,6 +183,15 @@
     const shapes = (step.shapes || []).map((s) => shapeEl(s, theme, ids)).join('');
     parts.push(`<g filter="url(#${ids.shadow})">${shapes}</g>`);
 
+    // a wine glass sits in front of the napkin that's tucked into it
+    if (step.prop === 'glass') {
+      parts.push(
+        `<path d="M34 36H66Q66 60 50 63Q34 60 34 36Z" fill="#fff" fill-opacity=".16" stroke="#fff" stroke-opacity=".75" stroke-width=".6"/>` +
+          `<path d="M37.5 39Q37.5 55 45 59" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1"/>` +
+          `<rect x="49.2" y="63" width="1.6" height="9" fill="#fff" fill-opacity=".5"/>` +
+          `<ellipse cx="50" cy="73" rx="9" ry="2.2" fill="#fff" fill-opacity=".35" stroke="#fff" stroke-opacity=".6" stroke-width=".5"/>`
+      );
+    }
     if (step.details) {
       const dl = step.details
         .map((l) =>

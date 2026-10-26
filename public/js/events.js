@@ -77,7 +77,7 @@
       days: 1,
       blurb: 'Pumpkins, costumes and a deliciously spooky supper.',
       tip: 'Orange and black napkins plus a few mini pumpkins make an instant haunted table.',
-      folds: ['hat', 'bow', 'candle'],
+      folds: ['hat', 'bat', 'candle', 'pyramid', 'knot'],
       theme: { bg: '#1c1330', bg2: '#2d1b4a', surface: '#2a1f44', ink: '#fff4e6', muted: '#c9b8e6', primary: '#ff7a1a', onPrimary: '#1c1330', accent: '#9be15d', napkin: '#ff7a1a', napkin2: '#2b2b2b', table: '#3b2a20', dark: true, particles: ['🎃', '🦇', '🕸️', '👻', '🍬'] },
     },
     {
@@ -90,7 +90,7 @@
       days: 2,
       blurb: 'Day of the Dead: a joyful remembrance of loved ones who have passed.',
       tip: 'Marigold (cempasúchil) colours echo the flowers used on ofrendas to guide spirits home.',
-      folds: ['rose', 'fan', 'heart'],
+      folds: ['butterfly', 'rose', 'rosebud', 'candle', 'heart', 'fan'],
       theme: { bg: '#fff3e2', bg2: '#ffe0ec', surface: '#ffffff', ink: '#3b1f2b', muted: '#7a5866', primary: '#d6336c', onPrimary: '#ffffff', accent: '#ffb000', napkin: '#ff9f1c', napkin2: '#d6336c', table: '#6b3e26', particles: ['🌼', '💀', '🕯️', '🦋', '🌺'] },
     },
     {
@@ -102,8 +102,8 @@
       date: table(['2025-10-20', '2026-11-08', '2027-10-29', '2028-10-17', '2029-11-05']),
       days: 5,
       blurb: 'The festival of lights — diyas, rangoli, sweets and family feasts.',
-      tip: 'Set a diya or tealight (in a holder) in the centre of a lotus fold for a glowing place setting.',
-      folds: ['lotus', 'candle', 'fan'],
+      tip: 'Set a diya beside each lotus fold (never inside the fabric) for a glowing place setting.',
+      folds: ['lotus', 'candle', 'fan', 'rosebud', 'bouquet'],
       theme: { bg: '#2a0f3d', bg2: '#4a1557', surface: '#3a1650', ink: '#fff1d6', muted: '#e6c6e8', primary: '#ffb300', onPrimary: '#2a0f3d', accent: '#ff4f8b', napkin: '#f39c12', napkin2: '#c2185b', table: '#5b2c1a', dark: true, particles: ['🪔', '✨', '🌸', '🎆', '🍬'] },
     },
     {
@@ -116,7 +116,7 @@
       days: 1,
       blurb: 'A harvest feast with family and friends — and plenty of pie.',
       tip: 'Tuck a sprig of rosemary and a handwritten “thankful for” card into a cutlery pocket.',
-      folds: ['pocket', 'fan', 'crown'],
+      folds: ['cornucopia', 'placecard', 'pocket', 'fan', 'wrap', 'obi', 'crown'],
       theme: { bg: '#fdf1e3', bg2: '#f7dcc0', surface: '#ffffff', ink: '#3d2414', muted: '#7d5a41', primary: '#c0561d', onPrimary: '#ffffff', accent: '#7a8b2c', napkin: '#d97a2b', napkin2: '#7a8b2c', table: '#8b5a2b', particles: ['🍂', '🍁', '🥧', '🌽', '🦃'] },
     },
     {
@@ -129,7 +129,7 @@
       days: 8,
       blurb: 'Eight nights of light, latkes, sufganiyot and spinning dreidels.',
       tip: 'Blue and white napkins echo the menorah’s glow — a candle fold nods to each night’s new light.',
-      folds: ['candle', 'fan', 'envelope'],
+      folds: ['candle', 'fan', 'envelope', 'pyramid', 'flute'],
       theme: { bg: '#eef4ff', bg2: '#d9e6ff', surface: '#ffffff', ink: '#14244a', muted: '#4f6290', primary: '#1f4fbf', onPrimary: '#ffffff', accent: '#e2b33c', napkin: '#2e63d6', napkin2: '#ffffff', table: '#7d6a55', particles: ['🕎', '✨', '⭐', '🔵', '🍩'] },
     },
     {
@@ -142,7 +142,7 @@
       days: 2,
       blurb: 'Celebrating the birth of Jesus with carols, candles and a festive feast.',
       tip: 'A tree fold topped with a gold star chocolate doubles as a place card and a treat.',
-      folds: ['tree', 'candle', 'crown'],
+      folds: ['tree', 'mitre', 'candle', 'placecard', 'crown', 'fleurdelis', 'pocket'],
       theme: { bg: '#fbf6ee', bg2: '#f3e3d3', surface: '#ffffff', ink: '#2b1d16', muted: '#6e5a4e', primary: '#c0392b', onPrimary: '#ffffff', accent: '#1e7a46', napkin: '#1e7a46', napkin2: '#c0392b', table: '#7a4a2a', particles: ['❄️', '🎄', '⭐', '🎁', '🔔'] },
     },
     {
@@ -155,7 +155,7 @@
       days: 7,
       blurb: 'Seven days honouring African heritage, family and community, ending with the Karamu feast.',
       tip: 'Red, black and green napkins mirror the seven candles (mishumaa saba) of the kinara.',
-      folds: ['candle', 'pocket', 'fan'],
+      folds: ['candle', 'cornucopia', 'pocket', 'fan', 'obi'],
       theme: { bg: '#fff6e8', bg2: '#f4e2c4', surface: '#ffffff', ink: '#1b1410', muted: '#5f4c3b', primary: '#b3261e', onPrimary: '#ffffff', accent: '#1f7a3d', napkin: '#b3261e', napkin2: '#1f7a3d', table: '#4a2e1d', particles: ['🕯️', '🌽', '🧺', '✨', '🎁'] },
     },
     {
@@ -168,7 +168,7 @@
       days: 1,
       blurb: 'Count down to midnight in style.',
       tip: 'Gold napkins and a bow tie fold give every seat a black-tie feel.',
-      folds: ['bow', 'fan', 'crown'],
+      folds: ['flute', 'bow', 'goblet', 'fan', 'crown', 'handkerchief'],
       theme: { bg: '#0d1030', bg2: '#1c1f4a', surface: '#181b40', ink: '#fdf6e3', muted: '#b7b9d9', primary: '#f5c542', onPrimary: '#0d1030', accent: '#ff5fa2', napkin: '#e0b84a', napkin2: '#1b1b3a', table: '#2a2236', dark: true, particles: ['🎉', '🥂', '✨', '🎆', '🎊'] },
     },
     {
@@ -181,7 +181,7 @@
       days: 15,
       blurb: 'Reunion dinners, red envelopes and wishes for luck in the year ahead.',
       tip: 'Red and gold mean luck and prosperity — slip a red envelope (hóngbāo) into an envelope fold.',
-      folds: ['envelope', 'fan', 'lotus'],
+      folds: ['envelope', 'fan', 'lotus', 'rosebud', 'goblet'],
       theme: { bg: '#fff1ec', bg2: '#ffd9cc', surface: '#ffffff', ink: '#3a0d08', muted: '#7d3b30', primary: '#d7261e', onPrimary: '#ffffff', accent: '#f2b705', napkin: '#d7261e', napkin2: '#f2b705', table: '#5a1e14', particles: ['🧧', '🏮', '🐉', '✨', '🍊'] },
     },
     {
@@ -194,7 +194,7 @@
       days: 29,
       blurb: 'A holy month of fasting, prayer and reflection, with iftar meals shared at sunset.',
       tip: 'Many break the fast with dates and water — a lotus fold makes a lovely cradle for a few dates.',
-      folds: ['lotus', 'pocket', 'envelope'],
+      folds: ['lotus', 'obi', 'pocket', 'envelope', 'wrap'],
       theme: { bg: '#0f2740', bg2: '#173a5c', surface: '#163250', ink: '#f6f0dd', muted: '#b9c8d8', primary: '#e8c26a', onPrimary: '#0f2740', accent: '#4fb3a9', napkin: '#1f8a8a', napkin2: '#e8c26a', table: '#3b2a20', dark: true, particles: ['🌙', '⭐', '🏮', '✨', '🌟'] },
     },
     {
@@ -207,7 +207,7 @@
       days: 3,
       blurb: 'The joyful “festival of breaking the fast” — new clothes, gifts and generous feasts.',
       tip: 'Tuck Eidi (gift money) or a sweet blessing card into an envelope fold for each guest.',
-      folds: ['envelope', 'rose', 'lotus'],
+      folds: ['envelope', 'rose', 'lotus', 'bouquet', 'paradise', 'swan'],
       theme: { bg: '#f1faf6', bg2: '#d7f0e5', surface: '#ffffff', ink: '#0d2b22', muted: '#476b5f', primary: '#0f7b5f', onPrimary: '#ffffff', accent: '#d4a72c', napkin: '#0f7b5f', napkin2: '#d4a72c', table: '#7a5636', particles: ['🌙', '✨', '⭐', '🎁', '🍬'] },
     },
     {
@@ -220,7 +220,7 @@
       days: 4,
       blurb: 'A celebration of faith and generosity, with food shared among family, friends and those in need.',
       tip: 'Deep blues and golds feel celebratory; a lotus fold can hold a few dates or sweets.',
-      folds: ['lotus', 'rose', 'envelope'],
+      folds: ['lotus', 'rose', 'obi', 'envelope', 'crown'],
       theme: { bg: '#f3f7fb', bg2: '#dce8f3', surface: '#ffffff', ink: '#13283b', muted: '#4b6378', primary: '#2a6f97', onPrimary: '#ffffff', accent: '#e0a43a', napkin: '#2a6f97', napkin2: '#e0a43a', table: '#6b4a2b', particles: ['🌙', '✨', '⭐', '🕌', '🍬'] },
     },
     {
@@ -233,7 +233,7 @@
       days: 1,
       blurb: 'Love, roses and a dinner for two (or for all your favourite people).',
       tip: 'A heart fold with a little note hidden underneath is pure romance.',
-      folds: ['heart', 'rose', 'bow'],
+      folds: ['heart', 'rose', 'swan', 'rosebud', 'bow', 'handkerchief'],
       theme: { bg: '#fff0f4', bg2: '#ffd6e2', surface: '#ffffff', ink: '#4a0f24', muted: '#8a4a60', primary: '#e0245e', onPrimary: '#ffffff', accent: '#ff8fb1', napkin: '#e0245e', napkin2: '#ffffff', table: '#8a4b5a', particles: ['💖', '💌', '🌹', '💕', '✨'] },
     },
     {
@@ -246,7 +246,7 @@
       days: 1,
       blurb: 'Spring arrives in a riot of colour, music, gujiya and thandai.',
       tip: 'Mix and match the brightest napkins you own — no two places need to match!',
-      folds: ['lotus', 'fan', 'bow'],
+      folds: ['butterfly', 'bouquet', 'ringflower', 'lotus', 'fan', 'paradise'],
       theme: { bg: '#fffaf0', bg2: '#ffe6f5', surface: '#ffffff', ink: '#2a1240', muted: '#6d5487', primary: '#ff2e88', onPrimary: '#ffffff', accent: '#00a6e6', napkin: '#ffc400', napkin2: '#7b2ff7', table: '#9a6b45', particles: ['🎨', '💛', '💜', '💚', '🩷'] },
     },
     {
@@ -259,7 +259,7 @@
       days: 1,
       blurb: 'Honouring Ireland’s patron saint with music, dancing and plenty of green.',
       tip: 'Go green! A pocket fold can hold a shamrock-shaped name card.',
-      folds: ['pocket', 'fan', 'bow'],
+      folds: ['pocket', 'knot', 'fan', 'bow', 'wrap'],
       theme: { bg: '#effaf0', bg2: '#d4f0d8', surface: '#ffffff', ink: '#0f2a17', muted: '#466b51', primary: '#1f9d55', onPrimary: '#ffffff', accent: '#f2c94c', napkin: '#1f9d55', napkin2: '#f2c94c', table: '#6b4a2b', particles: ['☘️', '🍀', '🌈', '✨', '🪙'] },
     },
     {
@@ -272,7 +272,7 @@
       days: 13,
       blurb: 'A new day, a new year: spring cleaning, family visits and the Haft-sin table.',
       tip: 'Fresh greens and blossom pinks echo the sabzeh (sprouts) on the Haft-sin spread.',
-      folds: ['lotus', 'rose', 'envelope'],
+      folds: ['bouquet', 'lotus', 'basket', 'rose', 'butterfly', 'envelope'],
       theme: { bg: '#f4fbf2', bg2: '#dff2da', surface: '#ffffff', ink: '#1c3020', muted: '#557159', primary: '#3f8f4f', onPrimary: '#ffffff', accent: '#e85d8a', napkin: '#7cbf6b', napkin2: '#e85d8a', table: '#8a6a44', particles: ['🌱', '🌷', '🐟', '🍎', '✨'] },
     },
     {
@@ -285,7 +285,7 @@
       days: 1,
       blurb: 'Celebrating the resurrection of Jesus — and spring, with eggs and family lunches.',
       tip: 'A bunny fold with a little chocolate egg in front is a sure-fire hit with children.',
-      folds: ['bunny', 'lotus', 'crown'],
+      folds: ['bunny', 'eggears', 'basket', 'arum', 'palm', 'mitre', 'lotus'],
       theme: { bg: '#fbf7ff', bg2: '#ece3ff', surface: '#ffffff', ink: '#2b2140', muted: '#6c5f87', primary: '#8e6bd6', onPrimary: '#ffffff', accent: '#f7b267', napkin: '#b9a3ec', napkin2: '#ffd6e8', table: '#b98a5b', particles: ['🐣', '🌷', '🥚', '🐰', '🌼'] },
     },
     {
@@ -298,7 +298,7 @@
       days: 1,
       blurb: 'Christ is Risen! A joyful feast after Lent, with red eggs and sweet breads.',
       tip: 'Red-dyed eggs are a Pascha tradition — deep red napkins tie the whole table together.',
-      folds: ['candle', 'crown', 'lotus'],
+      folds: ['palm', 'candle', 'mitre', 'arum', 'crown', 'basket'],
       theme: { bg: '#fff7f3', bg2: '#fde0d6', surface: '#ffffff', ink: '#3a1010', muted: '#7d4a44', primary: '#b22222', onPrimary: '#ffffff', accent: '#d4a017', napkin: '#c62828', napkin2: '#d4a017', table: '#6b4a2b', particles: ['🥚', '🕯️', '🌿', '✨', '🌸'] },
     },
     {
@@ -310,8 +310,8 @@
       date: table(['2025-04-12', '2026-04-01', '2027-04-21', '2028-04-10', '2029-03-30']),
       days: 8,
       blurb: 'Retelling the Exodus at the Seder, with matzah, four cups and the questions of the youngest.',
-      tip: 'Three matzot are kept covered during the Seder — a triple-pocket fold makes a simple matzah cover.',
-      folds: ['matzah', 'crown', 'rose'],
+      tip: 'Crisp white or blue napkins suit the Seder table; keep the three matzot in a proper matzah cover.',
+      folds: ['pyramid', 'crown', 'lotus', 'fan', 'goblet'],
       theme: { bg: '#f6f3ea', bg2: '#e6e0cf', surface: '#ffffff', ink: '#1a2740', muted: '#56627a', primary: '#2d5f9a', onPrimary: '#ffffff', accent: '#b08d57', napkin: '#f4f1ea', napkin2: '#2d5f9a', table: '#7b5b3a', particles: ['🍷', '🌿', '🫓', '✨', '⭐'] },
     },
     {
@@ -324,7 +324,7 @@
       days: 1,
       blurb: 'Celebrating the founding of the Khalsa in 1699 and the spring harvest, with nagar kirtan and langar.',
       tip: 'Saffron (kesri) and blue napkins reflect the colours of the Nishan Sahib.',
-      folds: ['fan', 'lotus', 'pocket'],
+      folds: ['fan', 'cornucopia', 'lotus', 'pocket', 'wrap'],
       theme: { bg: '#fff8e6', bg2: '#ffe9b8', surface: '#ffffff', ink: '#2a1a05', muted: '#6e5a33', primary: '#e07c00', onPrimary: '#ffffff', accent: '#1e4fa3', napkin: '#f28c00', napkin2: '#1e4fa3', table: '#8b5e34', particles: ['🌾', '🌼', '✨', '🥁', '🌻'] },
     },
     {
@@ -337,7 +337,7 @@
       days: 1,
       blurb: 'Honouring the birth, enlightenment and passing of the Buddha with lanterns, offerings and kindness.',
       tip: 'The lotus — rising pure from muddy water — is a fitting fold for Vesak.',
-      folds: ['lotus', 'candle', 'fan'],
+      folds: ['lotus', 'candle', 'arum', 'rosebud', 'fan'],
       theme: { bg: '#fffdf3', bg2: '#fff0c9', surface: '#ffffff', ink: '#2d2110', muted: '#6f6043', primary: '#c97a00', onPrimary: '#ffffff', accent: '#e85d9a', napkin: '#f2a7c3', napkin2: '#f6c35b', table: '#8a6a44', particles: ['🪷', '🏮', '✨', '🕯️', '🌸'] },
     },
     {
@@ -350,7 +350,7 @@
       days: 1,
       blurb: 'Long days, picnic blankets and dinner outdoors.',
       tip: 'Sunny yellows and a fan or bow fold keep things bright and breezy.',
-      folds: ['bow', 'fan', 'rose'],
+      folds: ['wrap', 'knot', 'butterfly', 'bouquet', 'ringflower', 'bow', 'fan'],
       theme: { bg: '#f2fbff', bg2: '#d9f2fb', surface: '#ffffff', ink: '#13303a', muted: '#4c6b75', primary: '#ff8a3d', onPrimary: '#ffffff', accent: '#2bb3a3', napkin: '#ffd166', napkin2: '#2bb3a3', table: '#b98a5b', particles: ['🌻', '☀️', '🍓', '🦋', '🍉'] },
     },
     {
@@ -363,7 +363,7 @@
       days: 1,
       blurb: 'Moon-gazing, lanterns and mooncakes shared with family under the full moon.',
       tip: 'Legend says a Jade Rabbit lives on the moon — so a bunny fold is perfect here!',
-      folds: ['bunny', 'lotus', 'fan'],
+      folds: ['bunny', 'lotus', 'fan', 'rosebud', 'paradise'],
       theme: { bg: '#1a2340', bg2: '#27335c', surface: '#222d52', ink: '#fff7e0', muted: '#c3c9e3', primary: '#f7c948', onPrimary: '#1a2340', accent: '#e8836b', napkin: '#f4b942', napkin2: '#e8836b', table: '#3b2a20', dark: true, particles: ['🥮', '🌕', '🏮', '🐇', '✨'] },
     },
     {
@@ -376,7 +376,7 @@
       days: 2,
       blurb: 'The Jewish New Year: apples dipped in honey and round challah for a sweet year ahead.',
       tip: 'Honey-gold napkins with a rose fold make the table feel sweet — Shanah Tovah!',
-      folds: ['rose', 'crown', 'pocket'],
+      folds: ['rose', 'crown', 'cardinal', 'pocket', 'goblet', 'handkerchief'],
       theme: { bg: '#fffaf0', bg2: '#ffecc7', surface: '#ffffff', ink: '#3a1a10', muted: '#7a5a3e', primary: '#b8322a', onPrimary: '#ffffff', accent: '#d9a21b', napkin: '#e2a72e', napkin2: '#b8322a', table: '#7a5636', particles: ['🍎', '🍯', '🐝', '✨', '🍏'] },
     },
   ];

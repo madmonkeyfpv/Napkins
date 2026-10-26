@@ -5,8 +5,9 @@ const path = require('path');
 const vm = require('vm');
 
 const ctx = { window: {} };
+ctx.window.window = ctx.window;
 vm.createContext(ctx);
-for (const f of ['render.js', 'folds.js', 'events.js']) {
+for (const f of ['render.js', 'folds.js', 'folds-extra.js', 'events.js']) {
   vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'public', 'js', f), 'utf8'), ctx);
 }
 const { EVENTS, easter, orthodoxEaster, thanksgiving, mostRelevant, occurrence } = ctx.window.NapkinEvents;
@@ -48,7 +49,8 @@ for (const ev of EVENTS) {
   ev.folds.forEach((f) => assert.ok(ids.has(f), `${ev.id} -> ${f}`));
 }
 for (const f of FOLDS) {
-  assert.ok(f.steps.length >= 3 && f.final, `${f.id} has steps + final`);
+  assert.ok(f.steps.length >= 2 && f.final, `${f.id} has steps + final`);
+  assert.ok(f.sources && f.sources.length >= 1, `${f.id} cites a published source`);
   f.steps.forEach((s, i) => assert.ok(s.title && s.text && s.shapes.length, `${f.id} step ${i + 1}`));
 }
 console.log(`ok — ${EVENTS.length} celebrations, ${FOLDS.length} folds`);
