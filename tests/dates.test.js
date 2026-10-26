@@ -53,4 +53,10 @@ for (const f of FOLDS) {
   assert.ok(f.sources && f.sources.length >= 1, `${f.id} cites a published source`);
   f.steps.forEach((s, i) => assert.ok(s.title && s.text && s.shapes.length, `${f.id} step ${i + 1}`));
 }
+// Folds must need nothing but napkins (two napkins together is fine)
+const extras = /\b(ribbon|napkin ring|glass|goblet|twine|string|clip|tape|place card|cotton ball|egg)\b/i;
+for (const f of FOLDS) {
+  for (const s of [...f.steps, f.final]) assert.ok(!extras.test(s.text), `${f.id}: "${s.text}" needs an extra item`);
+  assert.ok(!extras.test(f.tip), `${f.id} tip mentions an extra item`);
+}
 console.log(`ok — ${EVENTS.length} celebrations, ${FOLDS.length} folds`);
