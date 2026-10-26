@@ -1,1 +1,6 @@
-window.NapkinPhotos = ['hat-final', 'fan-final'];
+window.NapkinPhotos = [
+  'bunny-final',
+  'fan-final',
+  'hat-final',
+  'rose-final',
+];
