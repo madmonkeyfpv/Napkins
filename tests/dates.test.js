@@ -49,6 +49,7 @@ for (const ev of EVENTS) {
 }
 for (const f of FOLDS) {
   assert.ok(f.steps.length >= 3 && f.final, `${f.id} has steps + final`);
+  assert.ok(f.sources && f.sources.length >= 2, `${f.id} cites at least two sources`);
   f.steps.forEach((s, i) => assert.ok(s.title && s.text && s.shapes.length, `${f.id} step ${i + 1}`));
 }
 console.log(`ok — ${EVENTS.length} celebrations, ${FOLDS.length} folds`);

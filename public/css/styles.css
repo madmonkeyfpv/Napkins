@@ -792,3 +792,17 @@ main,
     grid-template-columns: 260px 1fr;
   }
 }
+
+.guide-tip .sources {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.guide-tip .sources a {
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}

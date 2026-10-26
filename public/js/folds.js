@@ -2,6 +2,9 @@
  * Napkin fold library. Every step has a title, instructions and an
  * illustration (shapes / fold lines / arrows, drawn by render.js).
  *
+ * Each fold's steps were checked against the published guides in its
+ * `sources` list (at least two per fold), which the guide page links to.
+ *
  * To use a real photograph for any step or finished napkin, add
  *   photo: 'images/<fold>-<step>.jpg'
  * to that step (or to `final`) and it will be shown instead of the illustration.
@@ -103,13 +106,23 @@
     arrows: [A(50, 66, 50, 44, 0.5), A(76, 26, 54, 26, -0.5)],
   });
 
+  // --- sources the steps were checked against ------------------------------
+  const SRC = {
+    calinen: (page, name) => ({ name: `California Linen – ${name}`, url: `https://calinen.com/fld-${page}/` }),
+    falvey: { name: 'Falvey Linen – Folding Directions', url: 'https://falveylinen.com/wp-content/uploads/2024/05/NapkinFolding.pdf' },
+    werent: { name: 'We Rent Linens – Special Napkin Folding', url: 'https://werentlinens.com/wp-content/uploads/2019/03/Napkin_Folds.pdf' },
+    toh: { name: 'Taste of Home – How to Fold a Napkin', url: 'https://www.tasteofhome.com/article/how-to-fold-a-napkin/' },
+    homedepot: { name: 'The Home Depot – How to Fold a Napkin 11 Ways', url: 'https://www.homedepot.com/c/ai/how-to-fold-a-napkin-11-ways/9ba683603be9fa5395fab9012687ea13' },
+  };
+
   // --- finished-napkin artwork -------------------------------------------
+  // Top view of a rolled rose; the two "leaves" are the napkin's own corner layers.
   const roseTop = (full) => [
-    ...(full ? [petal(50, 40, 20, 34, 6, 0, 'leaf'), petal(50, 40, 160, 32, 6, -1, 'leaf')] : []),
-    C(50, 40, full ? 22 : 17, -1),
-    C(51, 39, full ? 17 : 13, 0),
-    C(49, 41, full ? 12 : 9, 1),
-    C(50, 40, full ? 6.5 : 5, 0),
+    ...(full ? [petal(50, 40, 25, 34, 7, -1), petal(50, 40, 155, 32, 7, -2)] : [petal(50, 40, 25, 22, 5, -1)]),
+    C(50, 40, full ? 22 : 18, -1),
+    C(51, 39, full ? 17 : 14, 0),
+    C(49, 41, full ? 12 : 10, 1),
+    C(50, 40, full ? 6.5 : 5.5, 0),
   ];
   const roseSpiral = 'M50 40m0-2.5a2.5 2.5 0 1 1-2.5 2.5a5 5 0 1 1 5 5a9 9 0 1 1-9-9a13 13 0 1 1 13 13';
 
@@ -118,7 +131,6 @@
     ...[45, 135, 225, 315].map((a) => petal(50, 40, a, full ? 27 : 22, full ? 10 : 8, 0)),
     ...(full ? [0, 90, 180, 270].map((a) => petal(50, 40, a, 15, 6, 1)) : []),
     C(50, 40, full ? 5.5 : 6, 1),
-    ...(full ? [C(50, 40, 3.6, 0, 'gold')] : []),
   ];
 
   const bunny = [
@@ -131,34 +143,30 @@
   ];
 
   const tree = (withStar) => [
-    P('46,58 54,58 54,68 46,68', -2),
     P('50,30 78,60 22,60', -1),
     P('50,19 72,46 28,46', 0),
     P('50,9 65,32 35,32', 1),
     ...(withStar ? [P(star(50, 9, 6, 2.6), 0, 'gold')] : []),
   ];
 
-  const candleBody = [
-    P('43,17 57,17 57,64 43,64', 0),
-    P('43,17 57,17 50,9', 1),
-    P('57,50 63,62 57,64', -1),
-  ];
+  const candleBody = [P('43,17 57,17 57,64 43,64', 0), P('43,56 57,56 57,64 43,64', 1)];
   const candleWraps = [
     [43, 28, 57, 22],
     [43, 40, 57, 34],
     [43, 52, 57, 46],
   ];
 
-  const witchHat = (bent) => [
-    E(50, 61, 27, 6.5, -1),
-    bent ? D('M38 60L49 24Q51 14 61 11Q55 18 56 27L62 60Z', 0) : P('38,60 50,14 62,60', 0),
-    P('38.4,60 61.6,60 60.3,54 39.7,54', 0, 'napkin2'),
-    ...(bent ? [P('47,54.5 53,54.5 53,59.5 47,59.5', 0, 'gold')] : []),
+  // Clown's Hat cone with its hem turned up into a cuff.
+  const coneHat = (band) => [
+    P('38,62 50,12 62,62', 0),
+    P('37,62 63,62 61.4,53 38.6,53', 1),
+    ...(band ? [P('38.6,53 61.4,53 61,50.5 39,50.5', 0, 'napkin2')] : []),
   ];
 
   const crown = [
     P('39,62 39,36 55,13 69,33 69,62', -1),
     P('31,64 31,37 46,16 61,37 61,64', 0),
+    P('46,16 52,24 46,30 40,24', 1),
     P('31,54 61,54 61,64 31,64', 1),
   ];
 
@@ -176,71 +184,60 @@
     P('38,31 62,47 62,54 38,38', 1),
   ];
 
-  const matzahStack = () => {
-    const out = [];
-    for (let i = 0; i < 4; i++) {
-      const y = -i * 0.8;
-      out.push(P(`33,${22 + y} 67,${22 + y} 67,${58 + y} 33,${58 + y}`, i - 2));
-      if (i < 3) {
-        const x = 72 - i * 1.6;
-        out.push(P(`37,${24 + y} ${x},${24 + y} ${x},${56 + y} 37,${56 + y}`, 0, 'matzah'));
-      }
-    }
-    return out;
-  };
+  const pyramid = [P('50,18 74,62 82,57', -1), P('26,62 74,62 50,18', 0)];
 
   const heart = D('M50 66L25 41Q15 29 25 20Q37 12 50 27Q63 12 75 20Q85 29 75 41Z', 0);
 
   const envelope = [
-    P('32,22 68,22 68,56 32,56', 0),
-    P('37,16 63,16 63,30 37,30', 0, 'white'),
-    P('32,56 50,40 68,56', 1),
-    P('32,22 68,22 50,43', 1),
-    C(50, 41, 3.6, 0, 'gold'),
+    P('31,24 69,24 69,54 31,54', 0),
+    P('36,18 64,18 64,30 36,30', 0, 'white'),
+    P('31,54 31,40 69,40 69,54', 1),
+    P('31,24 69,24 50,46', 1),
   ];
 
   // --- the folds ----------------------------------------------------------
   const FOLDS = [
     {
       id: 'fan',
-      name: 'Classic Fan',
+      name: 'Standing Fan',
       emoji: '🪭',
       difficulty: 'Easy',
       minutes: 3,
       blurb: 'A crisp pleated fan that stands up proudly on the plate.',
-      tip: 'Starched cotton or linen holds the pleats best. Iron the napkin first for razor-sharp folds.',
+      tip: 'A well-starched cotton or linen napkin is a must: soft napkins will flop instead of standing.',
+      sources: [SRC.toh, SRC.falvey, SRC.werent, SRC.homedepot],
       steps: [
-        halfStep(),
+        halfStep('Lay the napkin face-down and fold it in half, bottom edge up to the top edge, to make a rectangle.'),
         {
           title: 'Accordion pleat',
-          text: 'Starting at the left short edge, accordion-pleat (fold back and forth) about three-quarters of the length in pleats roughly 2.5 cm (1 in) wide. Leave the last quarter flat.',
+          text: 'Starting at one short end, fold the rectangle back and forth in accordion pleats about 2.5 cm (1 in) wide. Stop when roughly a third (about 10 cm / 4 in) is left flat.',
           shapes: [P(HALF)],
           lines: [26, 32, 38, 44, 50, 56, 62].map((x) => [x, 25, x, 55]),
           arrows: [A(22, 63, 64, 63, -0.18)],
         },
         {
-          title: 'Fold lengthwise',
-          text: 'Pinch the pleats together and fold the whole strip in half lengthwise, top edge down, so the pleats stay on the outside.',
+          title: 'Fold in half lengthwise',
+          text: 'Keeping the pleats pressed together, fold the strip in half lengthwise with the pleats on the outside. The flat section now sticks out at one end.',
           shapes: [...pleats(32, 25, 46, 55, 8), P('46,25 80,25 80,55 46,55')],
           lines: [[28, 40, 84, 40]],
           arrows: [A(88, 27, 88, 53, 0.5)],
         },
         {
           title: 'Make the stand',
-          text: 'Fold the flat tail diagonally up and toward the pleats. This triangle becomes the kick-stand that props the fan up.',
+          text: 'Fold the corner of the flat section diagonally toward the pleats to make a triangle, and tuck the end that sticks out under the last pleat. This triangle is the stand.',
           shapes: [...pleats(32, 40, 46, 55, 8), P('46,40 80,40 80,55 46,55')],
           lines: [[46, 55, 61, 40]],
           arrows: [A(78, 52, 56, 30, 0.3)],
         },
         {
           title: 'Stand & open',
-          text: 'Stand the napkin on the plate with the stand tucked behind, then let go — the pleats will spring open.',
+          text: 'Stand the napkin on the plate with the triangle at the back, then let go: the pleats will spring open into a fan.',
           shapes: [...fan(50, 62, 28, 228, 312, 9), P('45,59 55,59 54,65 46,65', -1)],
           prop: 'plateSide',
         },
       ],
       final: {
-        text: 'Ta-da! Fluff the pleats evenly so the fan forms a smooth half-circle.',
+        text: 'Ta-da! Adjust the pleats and the triangle at the back until the fan stands evenly.',
         shapes: [...fan(50, 62, 32, 192, 348, 15), P('44,58 56,58 54.5,65 45.5,65', -1)],
         prop: 'plateSide',
       },
@@ -251,50 +248,43 @@
       emoji: '🌹',
       difficulty: 'Medium',
       minutes: 4,
-      blurb: 'A romantic rolled rose — gorgeous nestled on a plate with a sprig of greenery.',
-      tip: 'Thinner, softer napkins roll tighter and make prettier petals.',
+      blurb: 'A romantic rolled rose with two leaves made from the napkin itself.',
+      tip: 'Freshly ironed napkins roll neatest. Narrow bands give a taller rose, wide bands a shorter one.',
+      sources: [SRC.homedepot, { name: 'Instructables – Fancy Dinner Napkins', url: 'https://www.instructables.com/Fancy-Dinner-Napkins/' }],
       steps: [
-        triangleStep(),
+        triangleStep('Lay the napkin face-down and fold it in half diagonally to make a large triangle.'),
         {
-          title: 'Cuff the long edge',
-          text: 'Turn the triangle so the long edge is nearest you. Fold that edge up by about 3 cm (1¼ in).',
+          title: 'Fold up a band',
+          text: 'Turn the triangle so the long edge is nearest you. Fold the long edge up about 4 cm (1½ in), then keep folding that band up until the unfolded point above it is about twice the band’s height.',
           shapes: [P(TRI)],
           lines: [[16, 56, 84, 56]],
-          arrows: [A(50, 70, 50, 53, 0.7)],
+          arrows: [A(50, 70, 50, 52, 0.7)],
         },
         {
-          title: 'Roll it up',
-          text: 'Starting at the left corner, roll the napkin tightly toward the right, keeping the cuff on the outside at the bottom.',
-          shapes: [P('24,62 90,62 50,22 24,48'), P('24,56 84,56 90,62 24,62', 1), D('M15 40h10v25h-10z', -1)],
-          details: [
-            [15, 45, 25, 44],
-            [15, 51, 25, 50],
-            [15, 57, 25, 56],
-          ],
-          arrows: [A(28, 70, 72, 70, -0.15)],
+          title: 'Flip & roll',
+          text: 'Flip the napkin over from top to bottom so the point faces toward you. Starting at the left end, roll it up tightly toward the right.',
+          flip: true,
+          shapes: [P('22,36 78,36 50,64'), P('14,24 86,24 78,36 22,36', 1)],
+          arrows: [A(14, 44, 82, 44, -0.15)],
         },
         {
-          title: 'Tuck the tail',
-          text: 'When you reach the end, tuck the loose tail into the cuff at the base so the roll holds together.',
-          shapes: [
-            D('M40 24Q43 13 47 22Q51 11 55 22Q59 15 60 24Z', 1),
-            P('40,24 60,24 60,64 40,64'),
-            P('60,50 70,61 60,64', -1),
-            P('40,58 60,58 60,64 40,64', 1),
-          ],
-          arrows: [A(74, 54, 59, 61, 0.5)],
+          title: 'Tuck the end',
+          text: 'When you reach the end, tuck the loose tail underneath the outer edge so the roll can’t unravel.',
+          shapes: [P('40,22 60,22 60,58 40,58'), P('40,22 60,22 60,31 40,31', 1), P('60,40 70,54 60,58', -1)],
+          arrows: [A(74, 50, 59, 56, 0.5)],
           prop: 'plateSide',
         },
         {
-          title: 'Open the petals',
-          text: 'Lay the rose on the plate and gently peel back the outer layers to open the petals.',
+          title: 'Pull out the leaves',
+          text: 'Turn the rose over. Underneath you’ll find a corner with two layers. Pull them gently in opposite directions and bring them up around the rose as two leaves.',
           shapes: roseTop(false),
           details: [roseSpiral],
+          arrows: [A(66, 30, 82, 22, 0.3), A(34, 50, 18, 58, 0.3)],
           prop: 'plate',
         },
       ],
       final: {
-        text: 'Add a sprig of rosemary or a real leaf beside your rose for the finishing touch.',
+        text: 'Set the rose on the plate with its leaves spread out on either side.',
         shapes: roseTop(true),
         details: [roseSpiral],
         prop: 'plate',
@@ -306,20 +296,25 @@
       emoji: '🐰',
       difficulty: 'Medium',
       minutes: 5,
-      blurb: 'A cheeky rabbit with perky ears — a guaranteed giggle from little guests.',
-      tip: 'A square napkin of 45–50 cm (18–20 in) gives the tallest ears.',
+      blurb: 'A cheeky rabbit with perky ears that little guests love.',
+      tip: 'Lightweight, ironed cotton napkins are easiest; very thick linen is hard to tuck closed.',
+      sources: [
+        { name: 'Wayfair – How to Make a Napkin Bunny', url: 'https://www.wayfair.com/sca/ideas-and-advice/diy/how-to-make-a-napkin-bunny-T1179' },
+        { name: 'Stanley Rogers – How to Make Easter Napkins', url: 'https://www.stanleyrogers.com.au/blogs/tips/how-to-fold-easter-napkins' },
+        { name: 'World Market – Bunny Ear Napkins', url: 'https://www.worldmarket.com/inspiration/ideas-and-tips/how-to/how-to-fold-bunny-ear-napkins-for-easter.html' },
+      ],
       steps: [
         halfStep(),
         {
           title: 'Fold again',
-          text: 'Fold the rectangle in half lengthwise once more to make a long, narrow strip.',
+          text: 'Fold it in half lengthwise once more to make a long, narrow strip.',
           shapes: [P(HALF)],
           lines: [[20, 40, 80, 40]],
           arrows: [A(86, 52, 86, 28, 0.5)],
         },
         {
           title: 'Make a point',
-          text: 'Find the centre of the strip. Fold each half down from the centre so the strip forms a triangle with its point at the top.',
+          text: 'Find the centre of the strip’s top edge. Fold the top-left and top-right corners down so they meet in the centre, making a point at the top.',
           shapes: [P('10,36 90,36 90,44 10,44')],
           lines: [
             [50, 36, 42, 44],
@@ -329,7 +324,7 @@
         },
         {
           title: 'Make a diamond',
-          text: 'Fold the bottom corners of each side up to meet the top point, making a diamond.',
+          text: 'Fold the bottom-left and bottom-right corners up to the top point to make a diamond.',
           shapes: [P('50,14 78,66 22,66')],
           details: [
             [50, 14, 50, 66],
@@ -343,25 +338,37 @@
           arrows: [A(24, 64, 46, 18, 0.3), A(76, 64, 54, 18, -0.3)],
         },
         {
-          title: 'Flip & fold up',
-          text: 'Turn the diamond over. Fold the bottom point up to just below the top point.',
-          flip: true,
+          title: 'Make a kite',
+          text: 'Fold the left and right corners of the diamond in to meet at the centre. The two loose points at the bottom will become the ears.',
           shapes: [P('50,12 72,40 50,68 28,40')],
           details: [[50, 12, 50, 68]],
-          lines: [[31, 44, 69, 44]],
-          arrows: [A(50, 66, 50, 20, 0.4)],
+          lines: [
+            [50, 12, 39, 54],
+            [50, 12, 61, 54],
+          ],
+          arrows: [A(30, 40, 47, 42, 0.3), A(70, 40, 53, 42, -0.3)],
         },
         {
-          title: 'Make a ring',
-          text: 'Turn it over again. Fold the left and right sides behind and tuck one end into the other to form a ring.',
+          title: 'Fold down the top',
+          text: 'Fold the top point down so its tip sits just above the centre of the napkin.',
+          shapes: [P('50,12 61,40 50,68 39,40')],
+          details: [
+            [50, 12, 50, 68],
+            [50, 40, 50, 68],
+          ],
+          lines: [[42, 30, 58, 30]],
+          arrows: [A(50, 14, 50, 40, 0.5)],
+        },
+        {
+          title: 'Flip & tuck',
+          text: 'Hold it in place and turn the napkin over. Roll the left corner slightly toward the centre, then tuck the right corner into the left fold to close it into a ring.',
           flip: true,
-          shapes: [P('50,12 72,40 66,48 34,48 28,40'), P('34,48 66,48 50,26', 1)],
-          details: [[50, 12, 50, 26]],
-          arrows: [A(26, 50, 46, 60, 0.4), A(74, 50, 54, 60, -0.4)],
+          shapes: [P('42,30 58,30 61,40 50,68 39,40'), P('42,30 58,30 50,40', 1)],
+          arrows: [A(34, 44, 47, 50, 0.4), A(66, 44, 53, 50, -0.4)],
         },
       ],
       final: {
-        text: 'Stand the bunny up and gently pull the two points apart into ears. Hop to it!',
+        text: 'Stand the bunny up on its base, ears at the top, and fluff the ears apart. Hop to it!',
         shapes: bunny,
         prop: 'plateSide',
       },
@@ -372,49 +379,46 @@
       emoji: '🎄',
       difficulty: 'Tricky',
       minutes: 7,
-      blurb: 'Layered tiers make a little evergreen tree — top it with a star card.',
-      tip: 'Use a large (50 cm / 20 in) napkin and press every layer flat with your palm.',
+      blurb: 'Stacked, tucked layers make a little evergreen. Top it with a star.',
+      tip: 'Use a square napkin of at least 40 cm (16 in); 50 cm (20 in) is ideal. Smooth every layer flat as you go.',
+      sources: [
+        { name: 'Instructables – Christmas Tree Napkin Fold', url: 'https://www.instructables.com/Christmas-Tree-Napkin-Fold/' },
+        { name: 'ZWILLING – Fold a Christmas tree out of napkins', url: 'https://www.zwilling.com/ca/magazine/cook-and-create/fold-napkins.html' },
+      ],
       steps: [
-        quartersStep(),
+        quartersStep('Fold the napkin in half, then in half again, lining up the corners. Turn it so the loose (open) corners point toward you.'),
         {
           title: 'Stagger the layers',
-          text: 'Turn the square into a diamond with the open corners at the top. Fold the top layer down, stopping about 2 cm short of the bottom point. Repeat with each layer, stepping each one a little higher.',
+          text: 'Fold the top layer’s loose corner up toward the far point. Fold each following layer up too, stopping each one a little below the last so the corners are evenly staggered.',
           shapes: [P('50,10 80,40 50,70 20,40')],
           details: [
-            [46, 14, 54, 14],
-            [43, 17, 57, 17],
-            [40, 20, 60, 20],
+            [46, 66, 54, 66],
+            [43, 63, 57, 63],
+            [40, 60, 60, 60],
           ],
-          lines: [[22, 42, 78, 42]],
-          arrows: [A(50, 13, 50, 64, 0.35)],
+          arrows: [A(50, 67, 50, 16, 0.35)],
         },
         {
           title: 'Flip & fold the sides',
-          text: 'Turn the napkin over. Fold the left and right corners in so they meet down the centre, making a tall triangle.',
+          text: 'Slide your hand under the napkin and flip it over. Fold each side corner across to the opposite side’s edge, making a tall, narrow triangle.',
           flip: true,
           shapes: [P('50,10 80,40 50,70 20,40')],
           lines: [
             [50, 10, 38, 58],
             [50, 10, 62, 58],
           ],
-          arrows: [A(22, 40, 46, 44, 0.3), A(78, 40, 54, 44, -0.3)],
+          arrows: [A(22, 40, 58, 44, 0.3), A(78, 40, 42, 44, -0.3)],
         },
         {
-          title: 'Make the tiers',
-          text: 'Turn over again. Starting with the top layer, fold each loose corner up and tuck it under the layer above to create the branches.',
+          title: 'Fold up the tiers',
+          text: 'Flip it back over with the narrow tip pointing away from you. Starting at the top, fold each loose flap up and tuck it under the layer above to make the branches.',
           flip: true,
           shapes: [P('50,8 64,58 50,70 36,58'), P('39,60 61,60 50,70', 1), P('41,50 59,50 50,60', 1), P('43,40 57,40 50,50', 1)],
           arrows: [A(50, 68, 50, 52, 0.7)],
         },
-        {
-          title: 'Shape the tree',
-          text: 'Lay it on the plate and fold the bottom tip under to make a little trunk. Neaten each tier.',
-          shapes: tree(false),
-          prop: 'plate',
-        },
       ],
       final: {
-        text: 'Top your tree with a star — a cut-out card, a gold chocolate or a cinnamon stick works a treat.',
+        text: 'Place it on the plate and neaten each tier. A cinnamon stick makes a lovely trunk and a star-shaped card a topper.',
         shapes: tree(true),
         prop: 'plate',
       },
@@ -425,8 +429,9 @@
       emoji: '🪷',
       difficulty: 'Medium',
       minutes: 5,
-      blurb: 'A blooming water-lily that can cradle a tealight, a few dates or a sweet.',
-      tip: 'A stiff, well-starched napkin keeps the petals standing tall.',
+      blurb: 'A blooming water-lily (also called the Rose fold) that can cradle a few dates or a sweet.',
+      tip: 'Press every fold firmly. A stiff, starched napkin keeps the petals standing.',
+      sources: [SRC.calinen('therose', 'The Rose'), SRC.werent, SRC.falvey],
       steps: [
         {
           title: 'Corners to centre',
@@ -458,7 +463,7 @@
         },
         {
           title: 'Flip & fold',
-          text: 'Turn the napkin over and fold the four corners into the centre one more time.',
+          text: 'Turn the napkin over and fold the four corners into the centre one more time, pressing all the folds tight.',
           flip: true,
           shapes: [P('35,25 65,25 65,55 35,55')],
           lines: [
@@ -470,8 +475,8 @@
           arrows: [A(36, 26, 47, 37, 0.3), A(64, 26, 53, 37, -0.3), A(64, 54, 53, 43, 0.3), A(36, 54, 47, 43, -0.3)],
         },
         {
-          title: 'Pull the petals',
-          text: 'Hold the centre down firmly. Reach underneath each corner, grab the flap and pull it up and out to form a petal.',
+          title: 'Pull up the petals',
+          text: 'Hold the centre down firmly with one hand. With the other, reach under each corner, grab the flap and pull it up and out to make a petal.',
           shapes: [P('50,25 65,40 50,55 35,40')],
           details: [
             [50, 25, 50, 55],
@@ -480,55 +485,56 @@
           arrows: [A(40, 30, 28, 18, 0.3), A(60, 30, 72, 18, -0.3), A(60, 50, 72, 62, 0.3), A(40, 50, 28, 62, -0.3)],
         },
         {
-          title: 'Second layer',
-          text: 'Now pull out the four flaps between the petals for a fuller bloom.',
+          title: 'More petals',
+          text: 'Still holding the centre, reach between the petals and pull out the flaps underneath for a fuller bloom.',
           shapes: lotusFlower(false),
           arrows: [A(50, 32, 50, 12, 0.3), A(58, 40, 80, 40, 0.3), A(50, 48, 50, 68, 0.3), A(42, 40, 20, 40, 0.3)],
           prop: 'plate',
         },
       ],
       final: {
-        text: 'Your lotus is in bloom! Place a tealight (in a holder), a few dates or a sweet in the centre.',
+        text: 'Your lotus is in bloom! Nestle a few dates, a sweet or a place card in the centre.',
         shapes: lotusFlower(true),
         prop: 'plate',
       },
     },
     {
       id: 'candle',
-      name: 'Glowing Candle',
+      name: 'Candle',
       emoji: '🕯️',
       difficulty: 'Easy',
       minutes: 3,
-      blurb: 'A tall rolled candle that stands to attention — a lovely nod to festivals of light.',
+      blurb: 'A tall rolled candle that stands to attention, a nod to festivals of light.',
       tip: 'Roll as tightly as you can; a loose roll will lean.',
+      sources: [SRC.calinen('candle', 'The Candle'), SRC.falvey, SRC.werent],
       steps: [
-        triangleStep(),
+        triangleStep('Lay the napkin face-down and fold it in half diagonally to make a triangle.'),
         {
-          title: 'Cuff the long edge',
-          text: 'Turn the triangle so the long edge faces you, and fold that edge up by about 2.5 cm (1 in).',
+          title: 'Fold up a cuff',
+          text: 'Turn the triangle so the long edge faces you, and fold that edge up by about a quarter to a third of the triangle’s height to make a cuff.',
           shapes: [P(TRI)],
-          lines: [[17, 55, 83, 55]],
-          arrows: [A(50, 70, 50, 52, 0.7)],
+          lines: [[22, 50, 78, 50]],
+          arrows: [A(50, 70, 50, 46, 0.7)],
         },
         {
           title: 'Flip & roll',
-          text: 'Turn the napkin over. Starting from one corner, roll it up tightly toward the other corner.',
+          text: 'Turn the napkin over. Starting at one end, roll it up tightly to the other end.',
           flip: true,
-          shapes: [P(TRI), P('17,55 83,55 90,62 10,62', -1)],
-          arrows: [A(14, 66, 84, 66, -0.15), A(14, 58, 38, 44, 0.4)],
+          shapes: [P('22,50 78,50 50,22'), P('10,62 90,62 78,50 22,50', -1)],
+          arrows: [A(12, 66, 86, 66, -0.15), A(12, 58, 36, 40, 0.4)],
         },
         {
           title: 'Tuck & stand',
-          text: 'Tuck the loose corner into the cuff at the base to secure it, then stand the candle upright.',
-          shapes: candleBody,
+          text: 'Tuck the loose corner inside the cuff at the base to hold the roll, then stand the candle upright.',
+          shapes: [...candleBody, P('43,17 57,17 50,8', 1), P('57,48 63,58 57,60', -1)],
           details: candleWraps,
-          arrows: [A(70, 56, 58, 61, 0.5)],
+          arrows: [A(70, 52, 58, 58, 0.5)],
           prop: 'plateSide',
         },
       ],
       final: {
-        text: 'Let the top point be your flame — or wrap a gold ribbon around it for extra sparkle.',
-        shapes: [...candleBody.slice(0, 1), D('M50 3Q57 11 50 16.5Q43 11 50 3Z', 0, 'flame'), P('43,17 57,17 50,10', 1)],
+        text: 'Fold one layer of the top point down so the other stands up like a flame.',
+        shapes: [...candleBody, P('43,17 57,17 50,5', 0), P('43,17 50,17 46,24', -1)],
         details: candleWraps,
         prop: 'plateSide',
       },
@@ -539,35 +545,29 @@
       emoji: '🧙',
       difficulty: 'Easy',
       minutes: 3,
-      blurb: 'A rolled cone with a floppy brim — spooky, silly and super quick.',
-      tip: 'Black, orange or purple napkins look the part. Paper napkins work too for kids’ parties.',
+      blurb: 'The classic Clown’s Hat cone with a turned-up cuff. In black or orange, it’s an instant witch’s hat.',
+      tip: 'Start with a large square napkin (45–50 cm / 18–20 in). Roll loosely at first, then tighten.',
+      sources: [SRC.calinen('clownhat', 'The Clown’s Hat'), SRC.falvey],
       steps: [
-        triangleStep(),
+        halfStep('Lay the napkin face-down and fold it in half, bringing the bottom edge up to the top edge.'),
         {
           title: 'Roll a cone',
-          text: 'Hold the centre of the long edge. Roll one corner around toward the other to form a tight cone, point at the top.',
-          shapes: [P(TRI)],
-          lines: [[50, 22, 50, 62]],
-          arrows: [A(14, 59, 48, 44, 0.4)],
+          text: 'Hold the centre of the folded bottom edge with one finger. Take the lower-right corner and loosely roll it around that point, matching the corners as you go, until a cone forms.',
+          shapes: [P(HALF), C(50, 55, 2.2, 0, 'white')],
+          arrows: [A(78, 53, 54, 28, 0.35)],
         },
         {
-          title: 'Make the brim',
-          text: 'Stand the cone up and fold the bottom edge outward and upward a couple of times to make a sturdy brim.',
-          shapes: [P('38,62 50,14 62,62')],
+          title: 'Turn up the hem',
+          text: 'Turn the cone upside down so the point is at the top, then turn the bottom hem up all the way around to make a cuff.',
+          shapes: [P('38,62 50,12 62,62')],
           lines: [[39, 56, 61, 56]],
-          arrows: [A(41, 63, 28, 58, 0.5), A(59, 63, 72, 58, -0.5)],
-          prop: 'plateSide',
-        },
-        {
-          title: 'Add a band',
-          text: 'Wrap a ribbon or a strip of contrasting napkin around the base of the cone for the hat band.',
-          shapes: witchHat(false),
+          arrows: [A(36, 64, 36, 52, -0.6), A(64, 64, 64, 52, 0.6)],
           prop: 'plateSide',
         },
       ],
       final: {
-        text: 'Give the tip a gentle bend to one side for a proper witchy slouch. Cackling optional.',
-        shapes: witchHat(true),
+        text: 'Stand the hat on its cuff. Tie a ribbon around the cuff if you like.',
+        shapes: coneHat(true),
         prop: 'plateSide',
       },
     },
@@ -577,13 +577,14 @@
       emoji: '🍴',
       difficulty: 'Medium',
       minutes: 4,
-      blurb: 'A smart striped pocket that holds the cutlery — and a name card or sprig of herbs.',
-      tip: 'Iron each diagonal band flat for crisp stripes.',
+      blurb: 'A smart striped pocket that holds the cutlery, a menu or a sprig of herbs.',
+      tip: 'Press each diagonal band flat (an iron helps) for crisp, even stripes.',
+      sources: [SRC.toh, SRC.werent, SRC.homedepot],
       steps: [
-        quartersStep('Fold the napkin in half, then in half again, so all the loose corners are together. Turn it so the loose corners sit at the top right.'),
+        quartersStep('Fold the napkin in half, then in half again, to make a square. Turn it so the loose corners are at the top right.'),
         {
           title: 'First band',
-          text: 'Take the top layer at the loose corner and fold it diagonally toward the opposite corner, then fold it back on itself to make a neat band across the middle.',
+          text: 'Take the top layer at the loose corner and fold it over in 4 cm (1½ in) folds toward the centre until you have a neat diagonal band across the middle.',
           shapes: [P('30,20 70,20 70,60 30,60')],
           details: [
             [63, 20, 70, 27],
@@ -594,14 +595,14 @@
         },
         {
           title: 'Second band',
-          text: 'Fold the next layer diagonally the same way, tucking its edge just under the first band so the two stripes sit evenly.',
+          text: 'Fold the next layer the same way, stopping just above the first band so the two stripes are the same width.',
           shapes: [P('30,20 70,20 70,60 30,60'), P('34,20 30,24 66,60 70,56', 1)],
           lines: [[46, 20, 70, 44]],
           arrows: [A(68, 22, 54, 34, 0.3)],
         },
         {
-          title: 'Fold the sides behind',
-          text: 'Fold the left and right sides behind so the napkin is about a third narrower, keeping the bands on the front.',
+          title: 'Fold the sides under',
+          text: 'Fold the left and right sides under to the back so the napkin is a third of its width, keeping the bands on the front.',
           shapes: [P('30,20 70,20 70,60 30,60'), P('34,20 30,24 66,60 70,56', 1), P('46,20 52,20 70,38 70,44', 1)],
           lines: [
             [40, 20, 40, 60],
@@ -617,83 +618,77 @@
         },
       ],
       final: {
-        text: 'All set! Pop a name card or a sprig of herbs in the second pocket.',
+        text: 'All set! Tuck a name card or a sprig of herbs into the second band.',
         shapes: pocket(true),
       },
     },
     {
-      id: 'matzah',
-      name: 'Triple Pocket',
-      emoji: '🫓',
+      id: 'pyramid',
+      name: 'Pyramid',
+      emoji: '🔺',
       difficulty: 'Easy',
       minutes: 2,
-      blurb: 'Four layers make three pockets — perfect as a simple matzah cover or for holding flatbreads.',
-      tip: 'Use a large white or embroidered napkin; for Passover choose one kept for the Seder.',
+      blurb: 'A crisp, self-standing pyramid: quick, elegant and ideal when you’re folding for a crowd.',
+      tip: 'A medium-weight cotton or linen napkin gives the sharpest edges.',
+      sources: [SRC.calinen('pyramid', 'Pyramid'), SRC.falvey],
       steps: [
-        halfStep(),
+        triangleStep('Lay the napkin face-down and fold it in half diagonally to make a triangle.'),
         {
-          title: 'Fold again',
-          text: 'Fold it in half again, right side over to the left, to make a square with four layers.',
-          shapes: [P(HALF)],
-          lines: [[50, 25, 50, 55]],
-          arrows: [A(76, 22, 24, 22, 0.35)],
+          title: 'Corners to the top',
+          text: 'Turn the triangle so the long edge faces you. Fold the left and right corners up to meet the top point, making a diamond.',
+          shapes: [P(TRI)],
+          lines: [
+            [30, 42, 50, 62],
+            [70, 42, 50, 62],
+          ],
+          arrows: [A(13, 60, 47, 24, 0.3), A(87, 60, 53, 24, -0.3)],
         },
         {
-          title: 'Find the pockets',
-          text: 'Turn the square so the open edges face you. The gaps between the four layers make three pockets.',
-          shapes: matzahStack().filter((s) => s.c !== 'matzah'),
-          arrows: [A(84, 40, 70, 40, 0)],
+          title: 'Flip & fold in half',
+          text: 'Turn the napkin over and fold it in half, bringing the bottom point up to the top point to make a triangle.',
+          flip: true,
+          shapes: [P('50,22 70,42 50,62 30,42')],
+          lines: [[30, 42, 70, 42]],
+          arrows: [A(50, 60, 50, 26, 0.4)],
         },
       ],
       final: {
-        text: 'Slide one matzah (or flatbread) into each of the three pockets and place it at the head of the table.',
-        shapes: matzahStack(),
-        details: [
-          [69, 30, 69, 31],
-          [70, 36, 70, 37],
-          [69, 44, 69, 45],
-          [70, 50, 70, 51],
-        ],
-        prop: 'plate',
+        text: 'Pick it up at the centre and stand it on the long base of the triangle, like a pyramid.',
+        shapes: pyramid,
+        prop: 'plateSide',
       },
     },
     {
       id: 'bow',
-      name: 'Bow Tie',
+      name: 'Napkin-Ring Bow',
       emoji: '🎀',
       difficulty: 'Easy',
       minutes: 2,
-      blurb: 'Pleat, pinch and tie — a dapper bow in under two minutes.',
-      tip: 'A contrasting ribbon, napkin ring or even a strip of washi tape makes the knot pop.',
+      blurb: 'Pleat, pinch and slip through a ring for a flared bow in under two minutes.',
+      tip: 'Any napkin ring works; a ribbon tied in a bow is a lovely alternative.',
+      sources: [SRC.homedepot, SRC.falvey],
       steps: [
+        quartersStep('Fold the napkin in half, then in half again, to make a square.'),
         {
-          title: 'Pleat it',
-          text: 'Lay the napkin flat and accordion-pleat it from the bottom edge to the top, in pleats about 2.5 cm (1 in) wide.',
-          shapes: [P(SQUARE)],
-          lines: [16, 22, 28, 34, 40, 46, 52, 58, 64].map((y) => [20, y, 80, y]),
-          arrows: [A(86, 66, 86, 14, 0.15)],
+          title: 'Accordion pleat',
+          text: 'Make two or three accordion folds (back and forth) across the width of the square.',
+          shapes: [P('30,20 70,20 70,60 30,60')],
+          lines: [30, 40, 50].map((y) => [30, y, 70, y]),
+          arrows: [A(76, 58, 76, 22, 0.15)],
         },
         {
-          title: 'Pinch the middle',
-          text: 'Holding the pleats together, pinch the long strip firmly at its centre.',
-          shapes: [P('12,35 88,35 88,45 12,45')],
+          title: 'Pinch & ring',
+          text: 'Pinch the pleats together in the middle and slip the napkin through a napkin ring.',
+          shapes: [P('20,36 80,36 80,46 20,46')],
           details: [
-            [12, 37.5, 88, 37.5],
-            [12, 40, 88, 40],
-            [12, 42.5, 88, 42.5],
+            [20, 39.5, 80, 39.5],
+            [20, 42.5, 80, 42.5],
           ],
-          arrows: [A(14, 30, 46, 30, 0.3), A(86, 30, 54, 30, -0.3)],
-        },
-        {
-          title: 'Tie the knot',
-          text: 'Wrap a napkin ring, ribbon or a thin strip of contrasting fabric around the pinched centre.',
-          shapes: [P('50,40 18,31 18,49'), P('50,40 82,31 82,49', -1), P('46,33 54,33 54,47 46,47', 0, 'accent')],
-          arrows: [A(40, 27, 60, 27, -0.5)],
-          prop: 'plate',
+          arrows: [A(22, 30, 46, 30, 0.3), A(78, 30, 54, 30, -0.3)],
         },
       ],
       final: {
-        text: 'Gently spread the pleats on each side so they fan out into a full bow.',
+        text: 'Gently smooth and flare out both ends so it opens into a bow.',
         shapes: [...fan(48, 40, 30, 148, 212, 6), ...fan(52, 40, 30, -32, 32, 6), P('45,32 55,32 55,48 45,48', 0, 'accent')],
         prop: 'plate',
       },
@@ -705,37 +700,30 @@
       difficulty: 'Medium',
       minutes: 4,
       blurb: 'A simple folded heart that says “I made this for you”.',
-      tip: 'Square napkins work best; press the centre fold firmly so it lies flat.',
+      tip: 'A square napkin about 45 cm (18 in) works best; press the centre folds firmly.',
+      sources: [SRC.homedepot, { name: 'In My Own Style – Heart Shaped Napkin Fold', url: 'https://inmyownstyle.com/valentines-table-easy-heart-shaped-napkin-fold.html' }],
       steps: [
-        halfStep(),
+        halfStep('Lay the napkin face-down and fold it in half lengthwise.'),
         {
           title: 'Fold again',
-          text: 'Fold it in half lengthwise once more to make a long strip.',
+          text: 'Fold it in half again in the same direction to make a long, skinny strip.',
           shapes: [P(HALF)],
           lines: [[20, 40, 80, 40]],
           arrows: [A(86, 52, 86, 28, 0.5)],
         },
         {
-          title: 'Fold down the sides',
-          text: 'Find the centre. Fold the right half straight down from the centre, then the left half, so the two ends sit side by side pointing toward you.',
-          shapes: [P('10,36 90,36 90,44 10,44')],
+          title: 'Fold up both halves',
+          text: 'Fold the left half straight up from the centre, like starting a paper football. Repeat with the right half so the two sides meet in the middle with a point at the bottom.',
+          shapes: [P('10,58 90,58 90,66 10,66')],
           lines: [
-            [50, 36, 42, 44],
-            [50, 36, 58, 44],
+            [50, 66, 42, 58],
+            [50, 66, 58, 58],
           ],
-          arrows: [A(86, 48, 56, 72, -0.3), A(14, 48, 44, 72, 0.3)],
-        },
-        {
-          title: 'Flip & turn',
-          text: 'Turn the napkin over and rotate it so the point is at the bottom.',
-          flip: true,
-          shapes: [P('34,12 66,12 66,52 50,68 34,52')],
-          details: [[50, 12, 50, 52]],
-          arrows: [A(74, 18, 74, 60, 0.6)],
+          arrows: [A(14, 54, 44, 18, 0.3), A(86, 54, 56, 18, -0.3)],
         },
         {
           title: 'Round the top',
-          text: 'Fold the outer top corners down at a small angle, then fold the inner top corners down a little too, making two rounded bumps.',
+          text: 'Fold the two inner top corners down and underneath. Then do the same with the two pointed outer corners so the top looks like a rounded heart.',
           shapes: [P('34,12 66,12 66,52 50,68 34,52')],
           details: [[50, 12, 50, 52]],
           lines: [
@@ -748,7 +736,7 @@
         },
       ],
       final: {
-        text: 'Turn it back over — and there’s your heart. Tuck a love note underneath.',
+        text: 'There’s your heart! Tuck a love note underneath.',
         shapes: [heart],
         details: [[50, 27, 50, 66]],
         prop: 'plate',
@@ -756,23 +744,18 @@
     },
     {
       id: 'crown',
-      name: "Bishop's Crown",
+      name: 'Crown',
       emoji: '👑',
       difficulty: 'Tricky',
       minutes: 6,
-      blurb: 'The grand, mitre-shaped classic of banquet halls — tall, regal and self-standing.',
+      blurb: 'The regal banquet-hall classic: tall, self-standing, with two peaks.',
       tip: 'Heavily starched linen is the secret to a crown that stays upright all evening.',
+      sources: [SRC.calinen('crown', 'The Crown'), SRC.falvey, SRC.werent],
       steps: [
+        triangleStep('Lay the napkin face-down and fold it in half diagonally to make a triangle.'),
         {
-          title: 'Make a triangle',
-          text: 'Lay the napkin face-down and fold it in half diagonally, bringing the top-right corner down to the bottom-left.',
-          shapes: [P(SQUARE)],
-          lines: [[20, 10, 80, 70]],
-          arrows: [A(77, 13, 24, 66, 0.3)],
-        },
-        {
-          title: 'Make a diamond',
-          text: 'Turn the triangle so the long edge is at the bottom. Fold the left and right corners up to meet the top point.',
+          title: 'Corners to the top',
+          text: 'Turn the triangle so the long edge faces you. Fold the left and right corners up to meet the top point, making a diamond.',
           shapes: [P('10,60 90,60 50,20')],
           lines: [
             [30, 40, 50, 60],
@@ -782,73 +765,85 @@
         },
         {
           title: 'Fold up the point',
-          text: 'Fold the bottom point up to about 2.5 cm (1 in) below the top.',
+          text: 'Fold the bottom point up about two-thirds of the way to the top point.',
           shapes: [P('50,20 70,40 50,60 30,40')],
           details: [[50, 20, 50, 60]],
-          lines: [[33, 43, 67, 43]],
-          arrows: [A(50, 58, 50, 25, 0.4)],
+          lines: [[36.5, 46.5, 63.5, 46.5]],
+          arrows: [A(50, 58, 50, 34, 0.4)],
         },
         {
           title: 'Fold it back',
-          text: 'Fold that same point back down so its tip touches the bottom fold.',
-          shapes: [P('50,20 70,40 67,43 33,43 30,40'), P('33,43 67,43 50,26', 1)],
-          lines: [[41, 34.5, 59, 34.5]],
-          arrows: [A(50, 28, 50, 41, 0.6)],
+          text: 'Fold that same point back down to the bottom edge.',
+          shapes: [P('50,20 70,40 63.5,46.5 36.5,46.5 30,40'), P('36.5,46.5 63.5,46.5 50,33', 1)],
+          lines: [[43, 40, 57, 40]],
+          arrows: [A(50, 35, 50, 45, 0.6)],
         },
         {
-          title: 'Flip & curl',
-          text: 'Turn it over. Curl the left and right sides behind and tuck one corner deep into the other to make a ring.',
+          title: 'Flip & tuck',
+          text: 'Turn the napkin over. Bring the left and right corners round behind and tuck one into the other to make a round base.',
           flip: true,
-          shapes: [P('50,20 70,40 67,43 33,43 30,40'), P('33,43 67,43 61,35 39,35', 1)],
+          shapes: [P('50,20 70,40 63.5,46.5 36.5,46.5 30,40'), P('36.5,46.5 63.5,46.5 57,40 43,40', 1)],
           lines: [
-            [40, 22, 40, 43],
-            [60, 22, 60, 43],
+            [40, 22, 40, 46],
+            [60, 22, 60, 46],
           ],
-          arrows: [A(30, 48, 46, 54, 0.4), A(70, 48, 54, 54, -0.4)],
+          arrows: [A(30, 50, 46, 56, 0.4), A(70, 50, 54, 56, -0.4)],
         },
       ],
       final: {
-        text: 'Stand it up and round out the base. Long live the dinner party!',
+        text: 'Stand it upright and peel the two top corners down and out to form the crown.',
         shapes: crown,
         prop: 'plateSide',
       },
     },
     {
       id: 'envelope',
-      name: 'Gift Envelope',
+      name: 'Envelope',
       emoji: '✉️',
       difficulty: 'Easy',
       minutes: 3,
-      blurb: 'A neat envelope fold — slip in a name card, a blessing or a little gift.',
+      blurb: 'A neat envelope with a real pocket: slip in a name card, a blessing or a little gift.',
       tip: 'Lovely for menus, place cards, red envelopes or Eid gifts.',
+      sources: [{ name: 'Instructables – Envelope Napkin Fold', url: 'https://www.instructables.com/Envelope-Napkin-Fold/' }, SRC.toh],
       steps: [
+        triangleStep('Lay the napkin face-down and fold it in half diagonally. Turn the triangle so its long side is nearest you.'),
         {
-          title: 'Sides to centre',
-          text: 'Lay the napkin face-down as a diamond. Fold the left and right corners into the centre.',
-          shapes: [P('50,8 82,40 50,72 18,40')],
+          title: 'Corners to the middle',
+          text: 'Fold the left corner in so its tip sits just past the middle of the long edge. Repeat with the right corner so the tips overlap slightly.',
+          shapes: [P(TRI)],
           lines: [
-            [34, 24, 34, 56],
-            [66, 24, 66, 56],
+            [31, 41, 31, 62],
+            [69, 41, 69, 62],
           ],
-          arrows: [A(20, 40, 46, 40, 0.4), A(80, 40, 54, 40, -0.4)],
+          arrows: [A(12, 60, 52, 56, 0.3), A(88, 60, 48, 56, -0.3)],
         },
         {
-          title: 'Fold up the bottom',
-          text: 'Fold the bottom point up so its tip sits just above the centre.',
-          shapes: [P('50,8 66,24 66,56 50,72 34,56 34,24'), P('34,24 50,40 34,56', 1), P('66,24 50,40 66,56', 1)],
-          lines: [[34, 54, 66, 54]],
-          arrows: [A(50, 70, 50, 38, 0.4)],
+          title: 'Fold the edges in',
+          text: 'Fold the lower-left corner in to the middle of the bottom edge, then the lower-right, making a “house” shape.',
+          shapes: [P('31,41 50,22 69,41 69,62 31,62'), P('31,41 31,62 52,62', 1), P('69,41 69,62 48,62', 1)],
+          lines: [
+            [31, 53, 40, 62],
+            [69, 53, 60, 62],
+          ],
+          arrows: [A(30, 60, 46, 60, -0.4), A(70, 60, 54, 60, 0.4)],
         },
         {
-          title: 'Fold down the flap',
-          text: 'Fold the top point down to make the envelope flap.',
-          shapes: [P('50,8 66,24 66,54 34,54 34,24'), P('34,24 50,40 34,54', 1), P('66,24 50,40 66,54', 1), P('34,54 66,54 50,36', 1)],
-          lines: [[34, 25, 66, 25]],
-          arrows: [A(50, 10, 50, 44, 0.4)],
+          title: 'Make the pocket',
+          text: 'Fold the bottom edge up so it sits just below the top side corners. This is the pocket.',
+          shapes: [P('40,62 31,53 31,41 50,22 69,41 69,53 60,62')],
+          lines: [[31, 52, 69, 52]],
+          arrows: [A(50, 61, 50, 43, 0.4)],
+        },
+        {
+          title: 'Close the flap',
+          text: 'Slip a card or note into the pocket, then fold the top point down to close the envelope.',
+          shapes: [P('31,41 50,22 69,41 69,52 31,52'), P('31,41 69,41 69,52 31,52', 1)],
+          lines: [[31, 41, 69, 41]],
+          arrows: [A(50, 24, 50, 47, 0.4)],
         },
       ],
       final: {
-        text: 'Tuck a name card, blessing or small gift inside and seal it with a sticker or sprig.',
+        text: 'Sealed and delivered! Tuck a name card, menu or blessing inside for each guest.',
         shapes: envelope,
         prop: 'plate',
       },

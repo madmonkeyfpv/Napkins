@@ -204,7 +204,11 @@
       <li>⏱ About ${fold.minutes} minutes</li>
       <li>📏 ${fold.steps.length} steps + finish</li>`;
     $('#toggle-view').hidden = !foldSteps(fold).some((s) => s.photo);
-    $('#guide-tip').innerHTML = `<strong>Napkin tip:</strong> ${esc(fold.tip)}`;
+    $('#guide-tip').innerHTML =
+      `<strong>Napkin tip:</strong> ${esc(fold.tip)}` +
+      `<span class="sources">✅ Steps checked against: ${fold.sources
+        .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`)
+        .join(' · ')}</span>`;
 
     $('#thumbs').innerHTML = steps
       .map(
