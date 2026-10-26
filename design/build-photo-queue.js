@@ -29,8 +29,9 @@ const colourName = (h) =>
   const folds = await p.evaluate(() => {
     const { EVENTS } = window.NapkinEvents;
     return window.NapkinFolds.map((f) => {
-      const ev = EVENTS.find((e) => e.folds[0] === f.id) || EVENTS.find((e) => e.folds.includes(f.id));
-      return { id: f.id, name: f.name, blurb: f.blurb, final: f.final.text, prop: f.final.prop, theme: ev.theme };
+      const ev = EVENTS.find((e) => e.folds[0] === f.id) || EVENTS.find((e) => e.folds.includes(f.id)) || EVENTS.find((e) => e.id === 'midsummer');
+      const final = window.NapkinSim.expand(f).final;
+      return { id: f.id, name: f.name, blurb: f.blurb, final: final.text, prop: final.prop, theme: ev.theme };
     });
   });
   const old = fs.existsSync(path.join(__dirname, 'photo-queue.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'photo-queue.json'))) : [];
@@ -38,8 +39,9 @@ const colourName = (h) =>
   for (const f of folds) {
     await p.evaluate(([id, theme]) => {
       const fold = window.NapkinFolds.find((x) => x.id === id);
+      const final = window.NapkinSim.expand(fold).final;
       document.body.style.margin = 0;
-      document.body.innerHTML = `<div id=s style="width:800px;height:640px">${window.NapkinRender.scene({ ...fold.final, arrows: [], lines: [], flip: false }, theme)}</div>`;
+      document.body.innerHTML = `<div id=s style="width:800px;height:640px">${window.NapkinRender.scene({ ...final, arrows: [], lines: [], flip: false }, theme)}</div>`;
     }, [f.id, f.theme]);
     await p.locator('#s').screenshot({ path: path.join(outDir, `${f.id}-final.jpg`), type: 'jpeg', quality: 85 });
     const view = f.prop === 'plate' ? 'Overhead top-down view' : 'Eye-level three-quarter view';

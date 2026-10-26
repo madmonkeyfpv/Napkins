@@ -64,9 +64,14 @@
     return scene(step, theme, { label });
   }
 
+  // pictures for every step come from the fold simulator (foldsim.js)
+  const expanded = new Map();
   function foldSteps(fold) {
-    const steps = [...fold.steps, { ...fold.final, title: 'Ta-da! The finished napkin', final: true }];
-    return steps.map((s, i) => ({ ...s, photo: s.photo || photoPath(fold, i) }));
+    if (!expanded.has(fold.id)) {
+      const { steps, final } = window.NapkinSim.expand(fold);
+      expanded.set(fold.id, [...steps, { ...final, title: 'Ta-da! The finished napkin', final: true }]);
+    }
+    return expanded.get(fold.id).map((s, i) => ({ ...s, photo: s.photo || photoPath(fold, i) }));
   }
 
   const finalOf = (fold) => foldSteps(fold)[fold.steps.length];
@@ -171,11 +176,11 @@
         <span class="fold-info">
           <span class="fold-name">${fold.emoji} ${esc(fold.name)}</span>
           <span class="fold-blurb">${esc(fold.blurb)}</span>
+          ${recommended && ev.why && ev.why[fold.id] ? `<span class="fold-why">${ev.emoji} ${esc(ev.why[fold.id])}</span>` : ''}
           <span class="fold-tags">
             <span class="tag tag-${fold.difficulty.toLowerCase()}">${fold.difficulty}</span>
             <span class="tag">⏱ ${fold.minutes} min</span>
             <span class="tag">${fold.steps.length} steps</span>
-            ${recommended ? '<span class="tag tag-star">★ Top pick</span>' : ''}
           </span>
         </span>
       </button>`;
@@ -186,8 +191,8 @@
     const rec = ev.folds.map(foldById);
     const others = FOLDS.filter((f) => !ev.folds.includes(f.id));
     $('#folds-title').textContent = `Perfect folds for ${ev.name}`;
-    $('#folds-sub').textContent = 'Hand-picked for the occasion — but every fold works for every table.';
-    $('#fold-recommended').innerHTML = rec.map((f, i) => foldCard(f, i < 3)).join('');
+    $('#folds-sub').textContent = 'Each fold below is chosen for what it means to this celebration — and every fold works for any table.';
+    $('#fold-recommended').innerHTML = rec.map((f) => foldCard(f, true)).join('');
     $('#fold-others').innerHTML = others.map((f) => foldCard(f, false)).join('');
     $('#more-count').textContent = `(${others.length})`;
   }
@@ -201,7 +206,7 @@
     $('#guide-title').textContent = `${fold.emoji} ${fold.name}`;
     $('#guide-meta').innerHTML = `
       <li><span class="tag tag-${fold.difficulty.toLowerCase()}">${fold.difficulty}</span></li>
-      <li>⏱ About ${fold.minutes} minutes</li>
+      <li>⏱ About ${fold.minutes} minute${fold.minutes === 1 ? '' : 's'}</li>
       <li>📏 ${fold.steps.length} steps + finish</li>`;
     $('#toggle-view').hidden = !foldSteps(fold).some((s) => s.photo);
     $('#guide-tip').innerHTML =

@@ -450,6 +450,13 @@ main,
   color: var(--muted);
   font-size: 0.95rem;
 }
+.fold-why {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
 .fold-tags {
   display: flex;
   flex-wrap: wrap;
