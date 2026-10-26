@@ -7,7 +7,7 @@ const vm = require('vm');
 const ctx = { window: {} };
 vm.createContext(ctx);
 for (const f of ['render.js', 'folds.js', 'events.js']) {
-  vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'js', f), 'utf8'), ctx);
+  vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'public', 'js', f), 'utf8'), ctx);
 }
 const { EVENTS, easter, orthodoxEaster, thanksgiving, mostRelevant, occurrence } = ctx.window.NapkinEvents;
 const FOLDS = ctx.window.NapkinFolds;
