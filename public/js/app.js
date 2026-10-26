@@ -27,6 +27,7 @@
     step: 0,
     filter: 'All',
     showAll: false,
+    view: 'photo',
   };
 
   // ---------------------------------------------------------------- helpers
@@ -51,14 +52,24 @@
     return `${a} – ${b}`;
   }
 
+  // Photos listed in photos.js (images/<fold>-<step>.jpg, images/<fold>-final.jpg)
+  const PHOTOS = new Set(window.NapkinPhotos || []);
+  const photoPath = (fold, i) => {
+    const name = i >= fold.steps.length ? `${fold.id}-final` : `${fold.id}-${i + 1}`;
+    return PHOTOS.has(name) ? `images/${name}.jpg` : null;
+  };
+
   function photo(step, theme, label) {
-    if (step.photo) return `<img src="${esc(step.photo)}" alt="${esc(label)}" loading="lazy">`;
+    if (step.photo && state.view === 'photo') return `<img src="${esc(step.photo)}" alt="${esc(label)}" loading="lazy">`;
     return scene(step, theme, { label });
   }
 
   function foldSteps(fold) {
-    return [...fold.steps, { ...fold.final, title: 'Ta-da! The finished napkin', final: true }];
+    const steps = [...fold.steps, { ...fold.final, title: 'Ta-da! The finished napkin', final: true }];
+    return steps.map((s, i) => ({ ...s, photo: s.photo || photoPath(fold, i) }));
   }
+
+  const finalOf = (fold) => foldSteps(fold)[fold.steps.length];
 
   // ---------------------------------------------------------------- theme
   function applyTheme(ev) {
@@ -118,7 +129,7 @@
       selectFold(fold.id, true);
     };
     $('#hero-photo').innerHTML =
-      photo(fold.final, ev.theme, `Finished ${fold.name} napkin for ${ev.name}`) +
+      photo(finalOf(fold), ev.theme, `Finished ${fold.name} napkin for ${ev.name}`) +
       `<figcaption>${esc(fold.name)} for ${esc(ev.name)}</figcaption>`;
   }
 
@@ -156,7 +167,7 @@
     const active = state.fold === fold;
     return `
       <button type="button" class="fold-card${active ? ' is-active' : ''}" data-fold="${fold.id}" aria-pressed="${active}">
-        <span class="photo fold-photo">${photo(fold.final, ev.theme, `Finished ${fold.name} napkin`)}</span>
+        <span class="photo fold-photo">${photo(finalOf(fold), ev.theme, `Finished ${fold.name} napkin`)}</span>
         <span class="fold-info">
           <span class="fold-name">${fold.emoji} ${esc(fold.name)}</span>
           <span class="fold-blurb">${esc(fold.blurb)}</span>
@@ -192,6 +203,7 @@
       <li><span class="tag tag-${fold.difficulty.toLowerCase()}">${fold.difficulty}</span></li>
       <li>⏱ About ${fold.minutes} minutes</li>
       <li>📏 ${fold.steps.length} steps + finish</li>`;
+    $('#toggle-view').hidden = !foldSteps(fold).some((s) => s.photo);
     $('#guide-tip').innerHTML = `<strong>Napkin tip:</strong> ${esc(fold.tip)}`;
 
     $('#thumbs').innerHTML = steps
@@ -367,6 +379,15 @@
     });
 
     $('#print').addEventListener('click', () => window.print());
+
+    $('#toggle-view').addEventListener('click', () => {
+      state.view = state.view === 'photo' ? 'diagram' : 'photo';
+      $('#toggle-view').setAttribute('aria-pressed', state.view === 'diagram');
+      $('#toggle-view').textContent = state.view === 'photo' ? '✏️ Diagram' : '📷 Photos';
+      renderHero();
+      renderFolds();
+      renderGuide();
+    });
 
     document.addEventListener('keydown', (e) => {
       if (e.target.closest('input, textarea, select') || state.showAll) return;
