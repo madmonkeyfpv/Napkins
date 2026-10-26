@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fold &amp; Feast — Napkin folding for every celebration</title>
+    <meta name="description" content="Step-by-step napkin folding guides for festivals, holidays and celebrations from every faith and culture." />
+    <meta name="theme-color" content="#1c1330" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪭</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="particles" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" data-home>
+        <span class="brand-mark" aria-hidden="true">🪭</span>
+        <span class="brand-name">Fold <span class="amp">&amp;</span> Feast</span>
+      </a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#celebrations">Celebrations</a>
+        <a href="#folds">Folds</a>
+        <a href="#guide">Guide</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <p class="eyebrow" id="hero-eyebrow">Coming up</p>
+          <h1 id="hero-title"><span id="hero-emoji" class="hero-emoji"></span> <span id="hero-name"></span></h1>
+          <p class="hero-when">
+            <span id="hero-date"></span>
+            <span class="pill" id="hero-countdown"></span>
+          </p>
+          <p class="hero-blurb" id="hero-blurb"></p>
+          <p class="hero-tip"><span aria-hidden="true">💡</span> <span id="hero-tip"></span></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="hero-cta" href="#guide">Start folding</a>
+            <a class="btn btn-ghost" href="#celebrations">Pick another celebration</a>
+          </div>
+        </div>
+        <figure class="hero-photo photo" id="hero-photo"></figure>
+      </section>
+
+      <section id="celebrations" class="section" aria-labelledby="cel-title">
+        <div class="section-head">
+          <h2 id="cel-title">Choose your celebration</h2>
+          <p class="section-sub">Sorted by what's coming up next. The site dresses up to match!</p>
+        </div>
+        <div class="filters" role="toolbar" aria-label="Filter by tradition" id="filters"></div>
+        <div class="event-grid" id="event-grid"></div>
+      </section>
+
+      <section id="folds" class="section" aria-labelledby="folds-title">
+        <div class="section-head">
+          <h2 id="folds-title">Perfect folds</h2>
+          <p class="section-sub" id="folds-sub"></p>
+        </div>
+        <div class="fold-grid" id="fold-recommended"></div>
+        <details class="more-folds">
+          <summary>More folds to try <span class="count" id="more-count"></span></summary>
+          <div class="fold-grid" id="fold-others"></div>
+        </details>
+      </section>
+
+      <section id="guide" class="section guide" aria-labelledby="guide-title">
+        <div class="guide-head">
+          <div>
+            <p class="eyebrow" id="guide-eyebrow"></p>
+            <h2 id="guide-title"></h2>
+            <ul class="meta" id="guide-meta"></ul>
+          </div>
+          <div class="guide-tools">
+            <button class="btn btn-ghost btn-sm" id="toggle-all" type="button" aria-pressed="false">📋 All steps</button>
+            <button class="btn btn-ghost btn-sm" id="print" type="button">🖨️ Print</button>
+          </div>
+        </div>
+        <p class="guide-tip" id="guide-tip"></p>
+
+        <div class="stepper" id="stepper">
+          <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+          <div class="step-view">
+            <figure class="photo step-photo" id="step-photo"></figure>
+            <div class="step-text" aria-live="polite">
+              <p class="step-count" id="step-count"></p>
+              <h3 id="step-title"></h3>
+              <p id="step-body"></p>
+              <div class="step-nav">
+                <button class="btn btn-ghost" id="prev" type="button">← Back</button>
+                <button class="btn btn-primary" id="next" type="button">Next →</button>
+              </div>
+              <p class="kbd-hint">Tip: use ← → keys or swipe the photo</p>
+            </div>
+          </div>
+          <ol class="thumbs" id="thumbs" aria-label="Jump to step"></ol>
+        </div>
+
+        <ol class="all-steps" id="all-steps" hidden></ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with 🧡 for every table. Dates for lunar and lunisolar festivals can vary by a day or so depending on your country, community and moon sighting — check locally.</p>
+      <p class="footer-small">Illustrations are drawn live in your celebration's colours. Want real photos? See the README for how to drop them in.</p>
+    </footer>
+
+    <div class="confetti" aria-hidden="true" id="confetti"></div>
+
+    <script src="js/render.js"></script>
+    <script src="js/folds.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
